@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d1" for="edge" attr.name="episode_id" attr.type="string" />
+  <key id="d0" for="edge" attr.name="action" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" />
+    <node id="11b164a97f0aaa08a5b16bbd2391f64e2eff0e0313a5d66a717728204c776969" />
+    <node id="86e9784478b735f8a9ae28b6a624a9fdc5b5c720f7593a5e59f8792558d4aebd" />
+    <node id="32af0db1e3d56a13b4fbeda6692829374f47d280a1125a7f605da3ce73237bdd" />
+    <node id="d711655b00d513da5449f95571a8554c955236fb39e323828df73191b04e8d1b" />
+    <node id="ceab8a1d946946d08abf2611510e6b8aa07abad39c2ca3244fde2d9fff0d46c5" />
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" id="0">
+      <data key="d0">RESET</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="11b164a97f0aaa08a5b16bbd2391f64e2eff0e0313a5d66a717728204c776969" id="0">
+      <data key="d0">ACTION1</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="86e9784478b735f8a9ae28b6a624a9fdc5b5c720f7593a5e59f8792558d4aebd" id="0">
+      <data key="d0">ACTION2</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="32af0db1e3d56a13b4fbeda6692829374f47d280a1125a7f605da3ce73237bdd" id="0">
+      <data key="d0">ACTION3</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="d711655b00d513da5449f95571a8554c955236fb39e323828df73191b04e8d1b" id="0">
+      <data key="d0">ACTION4</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" target="ceab8a1d946946d08abf2611510e6b8aa07abad39c2ca3244fde2d9fff0d46c5" id="0">
+      <data key="d0">ACTION5</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="11b164a97f0aaa08a5b16bbd2391f64e2eff0e0313a5d66a717728204c776969" target="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" id="0">
+      <data key="d0">RESET</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="86e9784478b735f8a9ae28b6a624a9fdc5b5c720f7593a5e59f8792558d4aebd" target="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" id="0">
+      <data key="d0">RESET</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="32af0db1e3d56a13b4fbeda6692829374f47d280a1125a7f605da3ce73237bdd" target="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" id="0">
+      <data key="d0">RESET</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+    <edge source="d711655b00d513da5449f95571a8554c955236fb39e323828df73191b04e8d1b" target="d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8" id="0">
+      <data key="d0">RESET</data>
+      <data key="d1">d1ecb16f-ccba-45e9-856e-c10057e5c6a9</data>
+    </edge>
+  </graph>
+</graphml>

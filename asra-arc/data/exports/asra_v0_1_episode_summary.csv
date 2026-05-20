@@ -1,0 +1,2 @@
+episode_id,game_id,level_id,num_steps,unique_states,num_cycles,num_dead_ends,final_status,total_reward,actions_used
+d1ecb16f-ccba-45e9-856e-c10057e5c6a9,smoke-game,smoke-level,10,6,1,0,NOT_FINISHED,0.0,"{""ACTION1"": 1, ""ACTION2"": 1, ""ACTION3"": 1, ""ACTION4"": 1, ""ACTION5"": 1, ""RESET"": 5}"
