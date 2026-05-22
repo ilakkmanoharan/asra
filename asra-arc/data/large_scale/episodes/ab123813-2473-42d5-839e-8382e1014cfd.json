@@ -1,0 +1,10 @@
+{
+  "episode_id": "ab123813-2473-42d5-839e-8382e1014cfd",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/ab123813-2473-42d5-839e-8382e1014cfd.jsonl"
+}

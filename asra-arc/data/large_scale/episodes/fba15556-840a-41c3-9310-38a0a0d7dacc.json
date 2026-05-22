@@ -1,0 +1,10 @@
+{
+  "episode_id": "fba15556-840a-41c3-9310-38a0a0d7dacc",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/fba15556-840a-41c3-9310-38a0a0d7dacc.jsonl"
+}

@@ -1,2 +1,8 @@
 # Local private notes, drafts, and videos — not published to GitHub
 private/
+
+# Project memory graph (local Cursor context; not published)
+memory-graph/
+
+# Cursor IDE (local)
+.cursor/

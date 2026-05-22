@@ -1,0 +1,61 @@
+{
+  "state_hash": "498c86645cfdaa3a1bdc4040b99c86cede6dfacd706cccbfc12622eba90dc813",
+  "tested_actions": [
+    {
+      "action": "RESET",
+      "changed_cells": 3,
+      "effect_type": "large_change",
+      "next_state_hash": "d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8",
+      "terminal": false
+    },
+    {
+      "action": "ACTION1",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "97bc67915999f8493ae4c0d66948580d20c68e84a1a2397d7d686e689d941fe1",
+      "terminal": false
+    },
+    {
+      "action": "ACTION2",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "60c2f4a7288a0130db931997065c27e3fc8a1217e437faa6c3346c38248f1d04",
+      "terminal": false
+    },
+    {
+      "action": "ACTION3",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "139f7cfc75adb9610aca12e0d21041360515c83ce972824d7c9742cec3209684",
+      "terminal": false
+    },
+    {
+      "action": "ACTION4",
+      "changed_cells": null,
+      "effect_type": "untested",
+      "next_state_hash": null,
+      "terminal": null
+    },
+    {
+      "action": "ACTION5",
+      "changed_cells": null,
+      "effect_type": "untested",
+      "next_state_hash": null,
+      "terminal": null
+    },
+    {
+      "action": "ACTION6",
+      "changed_cells": null,
+      "effect_type": "untested",
+      "next_state_hash": null,
+      "terminal": null
+    },
+    {
+      "action": "ACTION7",
+      "changed_cells": null,
+      "effect_type": "untested",
+      "next_state_hash": null,
+      "terminal": null
+    }
+  ]
+}

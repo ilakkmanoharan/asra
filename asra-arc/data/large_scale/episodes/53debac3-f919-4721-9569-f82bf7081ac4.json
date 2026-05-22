@@ -1,0 +1,10 @@
+{
+  "episode_id": "53debac3-f919-4721-9569-f82bf7081ac4",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/53debac3-f919-4721-9569-f82bf7081ac4.jsonl"
+}

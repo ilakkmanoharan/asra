@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Protocol
 
+from asra.agent.action_report_store import maybe_save_action_report
 from asra.agent.dead_end_detector import detect_dead_end
 from asra.analysis.grid_diff import diff_grid
 from asra.env.action_space import SUPPORTED_ACTIONS
@@ -37,28 +39,42 @@ class EnvironmentBackend(Protocol):
 
 
 class MockArcAGI3Environment:
-    def __init__(self) -> None:
+    def __init__(self, scenario: str = "default") -> None:
         self.step_index = 0
         self.grid = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
         self.game_id = "mock-game"
         self.level_id = "mock-level"
+        self.scenario = scenario
+        self._episode_steps = 0
 
     def reset(self, game_id: str = "mock-game", level_id: str = "mock-level") -> dict[str, Any]:
         self.step_index = 0
         self.game_id = game_id
         self.level_id = level_id
         self.grid = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+        if self.scenario != "terminal_demo":
+            self._episode_steps = 0
         return self._frame("NOT_FINISHED", 0.0)
 
     def step(self, action: str) -> dict[str, Any]:
         self.step_index += 1
+        self._episode_steps = getattr(self, "_episode_steps", 0) + 1
         if action == "RESET":
-            return self.reset(self.game_id, self.level_id)
+            frame = self.reset(self.game_id, self.level_id)
+            if self.scenario == "terminal_demo":
+                self._episode_steps = getattr(self, "_episode_steps", 0)
+            return frame
         y = (SUPPORTED_ACTIONS.index(action) - 1) // 3 if action in SUPPORTED_ACTIONS[1:] else 0
         x = (SUPPORTED_ACTIONS.index(action) - 1) % 3 if action in SUPPORTED_ACTIONS[1:] else 0
         self.grid[y][x] = (self.grid[y][x] + 1) % 4
-        status = "WIN" if self.step_index >= 6 and sum(map(sum, self.grid)) >= 6 else "NOT_FINISHED"
-        return self._frame(status, 1.0 if status == "WIN" else 0.0)
+        if self.scenario == "terminal_demo" and self._episode_steps >= 4:
+            status, reward = "WIN", 1.0
+        elif self.scenario == "game_over_demo" and self._episode_steps >= 3:
+            status, reward = "GAME_OVER", 0.0
+        else:
+            status = "WIN" if self.step_index >= 6 and sum(map(sum, self.grid)) >= 6 else "NOT_FINISHED"
+            reward = 1.0 if status == "WIN" else 0.0
+        return self._frame(status, reward)
 
     def get_available_actions(self) -> list[str]:
         return SUPPORTED_ACTIONS.copy()
@@ -90,6 +106,7 @@ class ArcAGI3Runner:
 
     def run_episode(self, agent: Any, max_steps: int = 200) -> EpisodeResult:
         logger = EpisodeLogger(self.data_dir)
+        reports_dir = Path(self.data_dir) / "analysis" / "action_reports"
         frame = self.reset()
         transitions: list[dict[str, Any]] = []
         total_reward = 0.0
@@ -109,6 +126,16 @@ class ArcAGI3Runner:
             transitions.append(row)
             if hasattr(agent, "observe"):
                 agent.observe(row)
+            if hasattr(agent, "action_memory"):
+                state_payload = row["state"]
+                report = maybe_save_action_report(
+                    state_payload,
+                    self.get_available_actions(),
+                    agent.action_memory,
+                    reports_dir,
+                )
+                if report:
+                    row["metadata"]["action_test_report_id"] = report["state_hash"]
             total_reward += result.reward
             frame = result.frame
             recent_states.append(hash_state(frame.grid))
@@ -117,4 +144,11 @@ class ArcAGI3Runner:
                 break
         summary = {"final_status": frame.status, "total_reward": total_reward, "num_steps": len(transitions)}
         episode_payload = logger.finalize(summary)
-        return EpisodeResult(logger.episode_id, transitions, frame.status, total_reward, episode_payload["transition_log"].replace("transitions", "episodes").replace(".jsonl", ".json"), str(logger.transition_path))
+        return EpisodeResult(
+            logger.episode_id,
+            transitions,
+            frame.status,
+            total_reward,
+            str(logger.episode_path),
+            str(logger.transition_path),
+        )

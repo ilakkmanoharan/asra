@@ -1,0 +1,10 @@
+{
+  "episode_id": "ebab5470-a485-4e90-bc07-55c468b1fcc9",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/ebab5470-a485-4e90-bc07-55c468b1fcc9.jsonl"
+}

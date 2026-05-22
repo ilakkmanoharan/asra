@@ -1,0 +1,388 @@
+# ASRA Decision Biology Experiment: OmniPath Prior World Model
+
+**Document version:** 1.0  
+**Experiment ID:** `db-omnipath-prior-v0`  
+**Last run:** reproducible via `scripts/decision_biology/run_omnipath_prior_experiment.py` (default seed `42`)  
+**Status:** completed — 1,000 transitions logged, analysis report generated  
+
+---
+
+## 1. Purpose and scientific framing
+
+This experiment is the **first Decision Biology deployment** of the ASRA (Adaptive Scientific Reasoning Architecture) transition-logging pipeline outside the Phase 1 grid-world prototype. It tests whether ASRA primitives—**states**, **perturbation actions**, **transition logs**, **prior world model M₀**, and **learned world model M_t**—can be instantiated on real pathway knowledge.
+
+**Central claim being probed (computational):**  
+A curated signaling network from **OmniPath** can serve as an **explanatory prior** (edge structure for biological world-model initialization). Simulated gene-level perturbations produce **observable state transitions** that ASRA can record, diff, hash, and aggregate into a **state graph**, analogous to Phase 1 grid transitions but with **gene activity vectors** instead of color grids.
+
+**What this experiment is not:**  
+- Not a re-analysis of LINCS, scPerturb, or Perturb-seq expression data.  
+- Not a claim of new biological discovery from wet-lab measurements.  
+- Not a full action-semantics inference solver (semantics are summarized, not converged to a single φ̂ per action).  
+
+**What it establishes:**  
+- End-to-end reproducible artifacts under `data/decision_biology/omnipath/`.  
+- Schema alignment between ASRA Phase 1 JSONL transitions and Decision Biology states.  
+- A concrete **M₀ prior** (64 directed edges, 32 genes) derived from OmniPath.  
+
+---
+
+## 2. ASRA ↔ Decision Biology mapping (this run)
+
+| ASRA concept | Implementation in `db-omnipath-prior-v0` |
+|--------------|------------------------------------------|
+| **State** `s_t` | Binary gene-activity vector over 32 genes (`gene_activities: {gene → 0.0 \| 1.0}`) |
+| **Action** `a_t` | Perturbation token: `knockdown_<GENE>` or `activate_<GENE>` (64 actions total) |
+| **Transition** | Tuple `(s_t, a_t, s_{t+1})` with `diff` over changed genes |
+| **State hash** | SHA-256 of sorted `(pathway_id, gene_activities)` — see `state_hash.py` |
+| **Prior world model M₀** | Directed edges from OmniPath subgraph (`prior_world_model_m0.json`) |
+| **Learned world model M_t** | `state_graph.json` built from logged transitions (`BiologyStateGraph`) |
+| **Action semantics** | Unknown to agent (`raw_action_semantics_known: false`); summarized post-hoc by action family |
+| **Reward** | Number of genes changed in `diff` (exploration signal, not biological fitness) |
+| **Episode** | 25 steps of random perturbation from a random initial activity pattern |
+| **game_id / level_id** | `decision_biology` / `omnipath_signaling_v0` |
+
+---
+
+## 3. Datasets
+
+### 3.1 Primary dataset: OmniPath (via `omnipath` Python client)
+
+| Field | Value |
+|-------|--------|
+| **Resource** | [OmniPath](https://omnipathdb.org/) — integrated prior knowledge of intercellular signaling |
+| **Client** | `omnipath` PyPI package ≥ 1.0.8 (`pip install -e '.[biology]'`) |
+| **API class** | `omnipath.interactions.OmniPath` |
+| **License flag** | `academic` |
+| **Query** | `directed=True`, `genesymbols=True`, `limit=2500` |
+| **Interaction resources** | `SIGNOR`, `PhosphoPoint`, `PhosphoSite` |
+| **Organism** | Human (default) |
+| **Cached raw file** | `raw/signaling_interactions.parquet` |
+
+**Download statistics (cached run):**
+
+| Metric | Count |
+|--------|------:|
+| Rows fetched (API limit) | 2,500 |
+| Unique genes in raw table | 1,393 |
+| Genes after subgraph filter (`max_genes=32`) | **32** |
+| Directed edges after filter | **64** |
+
+**Subgraph selection rule:**  
+From all `(source, target)` pairs in the cache, compute node degree, keep the **top 32 genes by degree**, and retain only edges whose endpoints are both in that set. This yields a dense, hub-centric signaling subgraph suitable for short-horizon propagation experiments.
+
+**Gene set used in the published run:**
+
+`ABL1`, `AKT1`, `ARK2C`, `ATM`, `ATR`, `CBL`, `CDK1`, `CTNNB1`, `EGFR`, `FYN`, `GRB2`, `GSK3B`, `H3C3`, `IKBKB`, `JAK1`, `JAK2`, `LCK`, `LYN`, `MAPK1`, `MAPK14`, `MAPK3`, `MAPK8`, `NOTCH1`, `PLK1`, `RAF1`, `SMAD2`, `SMAD3`, `SRC`, `STAT3`, `SYK`, `TGFBR1`, `TP53`
+
+**Fallback dataset (offline only):**  
+If the API is unavailable, code loads a built-in **RAS–MAPK-style** edge list (15 genes, 15 edges) from `omnipath_loader._fallback_signaling_edges()`. The completed run documented here used **`source: omnipath_api`**, not fallback.
+
+**Citation (recommended):**
+
+> Türei, D., et al. (2016). OmniPath: guidelines and gateway for literature-curated signaling pathway resources. *Nature Methods* 13, 966–967.  
+> https://doi.org/10.1038/nmeth.4077
+
+### 3.2 Derived ASRA corpora (generated by this experiment)
+
+| Artifact | Path | Description |
+|----------|------|-------------|
+| Prior M₀ graph | `graphs/prior_world_model_m0.json` | Static OmniPath-derived edges + weights |
+| Per-episode logs | `transitions/omnipath_ep_XXXX.jsonl` | 40 files × 25 transitions |
+| Merged export | `exports/asra_db_omnipath_transitions.jsonl` | 1,000 rows |
+| Learned M_t graph | `graphs/state_graph.json` | Nodes = state hashes; edges = action-labeled transitions |
+| Machine report | `analysis/omnipath_prior_report.json` | Aggregated metrics |
+
+---
+
+## 4. Experimental specification
+
+### 4.1 Identifier and defaults
+
+```yaml
+experiment_id: db-omnipath-prior-v0
+num_episodes: 40
+max_steps_per_episode: 25
+total_transitions: 1000   # 40 × 25
+random_seed: 42
+pathway_id: omnipath_signaling
+max_genes: 32
+omnipath_limit: 2500
+```
+
+### 4.2 Procedure (step-by-step)
+
+1. **Load or fetch** OmniPath interactions → cache Parquet → build `(genes, edges)`.  
+2. **Initialize M₀** — write `prior_world_model_m0.json` with one edge record per prior interaction (`weight: 1.0`).  
+3. **Instantiate** `PathwaySimulator` with prior adjacency.  
+4. **For each episode** `omnipath_ep_0000` … `omnipath_ep_0039`:  
+   - Sample **initial state**: each gene ON with probability 0.35; if all OFF, force first gene ON.  
+   - For each step `0 … 24`:  
+     - Sample action uniformly from 64 perturbations.  
+     - Apply `step(state, action)` → `next_state`, `diff`.  
+     - Emit transition row; append to episode JSONL.  
+   - Mark `terminal_state: true` when `step_index >= 49` (never reached at 25 steps).  
+5. **Merge** all rows → `exports/asra_db_omnipath_transitions.jsonl`.  
+6. **Build** `BiologyStateGraph` → `graphs/state_graph.json`.  
+7. **Write** `analysis/omnipath_prior_report.json`.
+
+### 4.3 Environment dynamics (pathway simulator)
+
+Perturbations and propagation are **deliberately simple** so the prior is the dominant structural signal.
+
+**Perturbation (action semantics template):**
+
+- `knockdown_<G>` → set activity of gene `G` to `0.0` before propagation.  
+- `activate_<G>` → set activity of gene `G` to `1.0` before propagation.  
+
+**Propagation (one step along M₀):**
+
+For each directed edge `(source → target)` with prior weight `w` (default 1.0):
+
+- If `activity[source] ≥ 0.5`, then  
+  `activity[target] ← min(1.0, activity[target] + 0.35 × w)`.
+
+**Binarization:** After propagation, each gene is thresholded: `≥ 0.5 → ON (1.0)`, else OFF (0.0).
+
+**Prediction:** `prior_predict(state, action)` applies perturbation then propagation. The environment `step` uses the same function, so **prior match rate = 100%** for this simulator (by construction).
+
+### 4.4 Transition record schema
+
+Each JSONL row follows ASRA Phase 1 shape, with biology-specific `state` / `next_state` payloads.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `transition_id` | UUID string | Unique row ID |
+| `episode_id` | string | e.g. `omnipath_ep_0012` |
+| `game_id` | string | Always `decision_biology` |
+| `level_id` | string | Always `omnipath_signaling_v0` |
+| `step_index` | int | 0-based step in episode |
+| `state` | object | See below |
+| `action` | object | `{ "name": "knockdown_TP53", "index": int }` |
+| `next_state` | object | Same structure as `state` |
+| `reward` | float | `num_changed_genes` |
+| `terminal_state` | bool | False for all steps in default run |
+| `diff` | object | Gene-level change summary |
+| `metadata` | object | Domain tags + `prior_predict_match` |
+
+**State / next_state object:**
+
+```json
+{
+  "domain": "decision_biology",
+  "pathway_id": "omnipath_signaling",
+  "state_type": "gene_activity_vector",
+  "state_hash": "<sha256>",
+  "gene_activities": {
+    "EGFR": 0.0,
+    "STAT3": 1.0
+  }
+}
+```
+
+**Diff object:**
+
+```json
+{
+  "num_changed_genes": 4,
+  "changed_genes": ["EGFR", "LCK", "SMAD2", "SMAD3"],
+  "change_ratio": 0.125
+}
+```
+
+**Metadata:**
+
+```json
+{
+  "domain": "decision_biology",
+  "dataset": "omnipath_prior",
+  "raw_action_semantics_known": false,
+  "prior_predict_match": true
+}
+```
+
+### 4.5 Prior M₀ graph schema (`prior_world_model_m0.json`)
+
+```json
+{
+  "type": "pathway_prior",
+  "dataset": "omnipath",
+  "n_genes": 32,
+  "n_edges": 64,
+  "edges": [
+    { "source": "JAK2", "target": "STAT3", "weight": 1.0 }
+  ],
+  "metadata": {
+    "source": "omnipath_api",
+    "cache_path": ".../raw/signaling_interactions.parquet",
+    "genes": ["..."],
+    "n_genes": 32,
+    "n_edges": 64
+  }
+}
+```
+
+### 4.6 Learned M_t graph schema (`state_graph.json`)
+
+Same edge list convention as Phase 1 `state_graph.json`, with biology node payloads:
+
+- **Node key:** `state_hash`  
+- **Node value:** `pathway_id`, `gene_activities`, `visit_count`  
+- **Edge key:** `(from_hash, to_hash, action_name)`  
+- **Edge fields:** `count`, `avg_reward`, `diff_summary` (`num_changed_genes`, `change_ratio`)  
+- **Top-level:** `"domain": "decision_biology"`  
+
+---
+
+## 5. Results
+
+### 5.1 Summary table
+
+| Metric | Result |
+|--------|-------:|
+| Episodes | 40 |
+| Steps per episode | 25 |
+| Total transitions | **1,000** |
+| Unique states (M_t nodes) | **435** |
+| Learned transition edges (M_t) | **987** |
+| Prior M₀ genes | 32 |
+| Prior M₀ edges | 64 |
+| Prior one-step prediction match | **100%** |
+| Raw OmniPath rows cached | 2,500 |
+
+### 5.2 Action semantics (post-hoc families)
+
+Actions are grouped by prefix (`knockdown` vs `activate`). Mean number of genes changed per step:
+
+| Action family | Count | Mean Δ genes |
+|---------------|------:|-------------:|
+| `activate` | 514 | **0.71** |
+| `knockdown` | 486 | **0.55** |
+
+**Interpretation:** Activation perturbations tend to flip more downstream genes ON via propagation than knockdowns flip OFF, given the binary threshold and forward-only positive influence rule.
+
+### 5.3 Most frequently sampled actions (top 8)
+
+| Action | Count |
+|--------|------:|
+| `knockdown_TP53` | 23 |
+| `activate_SMAD3` | 23 |
+| `activate_ATM` | 22 |
+| `activate_AKT1` | 22 |
+| `knockdown_TGFBR1` | 21 |
+| `activate_RAF1` | 21 |
+| `knockdown_STAT3` | 20 |
+| `activate_LCK` | 20 |
+
+Uniform sampling over 64 actions yields expected count ≈ 15.6 per action; hubs like TP53 and STAT3 appear more often in the **top sampled** list due to random variance over 1,000 draws, not preferential policy.
+
+### 5.4 Example transition (episode 0, step 0)
+
+**Action:** `knockdown_JAK1`  
+**Changed genes:** `EGFR`, `LCK`, `SMAD2`, `SMAD3` (4 genes, `change_ratio = 0.125`)  
+**Reward:** 4.0  
+**Prior predict match:** true  
+
+Illustrates cascade: knocking down `JAK1` alters local activity, then one propagation step updates downstream nodes per M₀ edges.
+
+### 5.5 State graph structure
+
+- **435** unique activity patterns visited across 1,000 steps.  
+- **987** directed edges in M_t (hash-to-hash, labeled by perturbation name).  
+- Multiple edges can share the same `(from, to)` pair with **different** `action` labels (ASRA aggregates by action).  
+- Visit counts per node are stored in `state_graph.json` for replay and future semantics clustering.  
+
+### 5.6 Comparison to Phase 1 grid prototype
+
+| Aspect | Phase 1 (grid) | OmniPath (this run) |
+|--------|----------------|---------------------|
+| State | 3×3 color grid | 32-gene binary vector |
+| State hash | Grid SHA-256 | Gene-vector SHA-256 |
+| Prior / dynamics | Hidden mock rules | OmniPath edges + propagation |
+| Scale (example) | 78k transitions (large-scale batch) | 1k transitions (v0 biology) |
+| M₀ source | Implicit in simulator | Explicit `prior_world_model_m0.json` |
+
+---
+
+## 6. Software and reproducibility
+
+### 6.1 Code locations
+
+| Component | Path |
+|-----------|------|
+| Package | `src/asra/decision_biology/` |
+| Loader | `omnipath_loader.py` |
+| Simulator | `pathway_simulator.py` |
+| Experiment runner | `experiment.py` |
+| State graph | `biology_state_graph.py` |
+| CLI | `scripts/decision_biology/run_omnipath_prior_experiment.py` |
+| Tests | `tests/decision_biology/test_omnipath_experiment.py` |
+
+### 6.2 Reproduce
+
+```bash
+cd asra-arc
+python -m venv .venv && source .venv/bin/activate
+pip install -e '.[biology]'
+python scripts/decision_biology/run_omnipath_prior_experiment.py
+```
+
+To force a fresh OmniPath download, delete `raw/signaling_interactions.parquet` before running.
+
+### 6.3 Dependencies
+
+- `omnipath>=1.0.8` — API access  
+- `pandas`, `pyarrow` — Parquet cache (project base deps)  
+- Network access required on first fetch (academic OmniPath endpoint)  
+
+---
+
+## 7. Directory layout (this folder)
+
+```
+data/decision_biology/omnipath/
+├── documents/
+│   └── EXPERIMENT_SPECIFICATION_AND_RESULTS.md   ← this file
+├── raw/
+│   └── signaling_interactions.parquet            ← OmniPath cache (2,500 rows)
+├── transitions/
+│   └── omnipath_ep_*.jsonl                       ← 40 episode files
+├── exports/
+│   └── asra_db_omnipath_transitions.jsonl        ← merged corpus
+├── graphs/
+│   ├── prior_world_model_m0.json                 ← M₀ prior
+│   └── state_graph.json                          ← M_t learned
+└── analysis/
+    └── omnipath_prior_report.json                ← machine-readable metrics
+```
+
+**Approximate artifact sizes:** raw ~19 KB; transitions+exports ~1.7 MB; graphs ~722 KB.
+
+---
+
+## 8. Limitations and next experiments
+
+1. **Binary gene states** — real transcriptomic states are continuous and high-dimensional; future work should map LINCS/scPerturb vectors into `gene_activities` or latent embeddings.  
+2. **Linear positive propagation** — biology includes inhibition, feedback, and context; OmniPath provides `is_inhibition` flags not yet used in v0.  
+3. **Random policy** — no information-gain experiment planner (§5.3 ASRA) yet; semantics summary is descriptive only.  
+4. **Subgraph cap** — 32 genes from 1,393 is a small hub sample; sensitivity analysis over `max_genes` is open.  
+5. **100% prior match** — reflects simulator design, not independent validation on held-out biological measurements.  
+
+**Planned v0.2:**
+
+- Ingest perturbation–response pairs from scPerturb or LINCS as `state_t` / `state_t1`.  
+- Initialize M₀ from OmniPath, **refine** M_t with prediction error on real data.  
+- Run action-semantics clustering per `knockdown_*` / `activate_*` token.  
+- Wire evaluation dashboard metrics (prediction accuracy, semantic convergence) on biological holdout sets.  
+
+---
+
+## 9. References and related documents
+
+- OmniPath: https://omnipathdb.org/  
+- ASRA Phase 1 README: `asra-arc/README.md`  
+- Short results mirror: `private/documents/phase2-decision-biology/omnipath/results.md`  
+- Manuscript context: `private/Patterns/v2/` §9.4–9.5 (Decision Biology dataset mapping)  
+
+---
+
+*Generated for the ASRA Decision Biology program. For questions or re-runs, use experiment ID `db-omnipath-prior-v0` and cite the OmniPath resource version cached in `raw/signaling_interactions.parquet`.*

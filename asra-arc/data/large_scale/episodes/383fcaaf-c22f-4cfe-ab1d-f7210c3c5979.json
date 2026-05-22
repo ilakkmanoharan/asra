@@ -1,0 +1,10 @@
+{
+  "episode_id": "383fcaaf-c22f-4cfe-ab1d-f7210c3c5979",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/383fcaaf-c22f-4cfe-ab1d-f7210c3c5979.jsonl"
+}

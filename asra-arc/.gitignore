@@ -4,3 +4,6 @@ __pycache__/
 *.py[cod]
 .env
 private/
+
+# LINCS L1000 raw downloads (GEO GSE92742; files exceed GitHub 100 MB limit)
+data/decision_biology/lincs/raw/

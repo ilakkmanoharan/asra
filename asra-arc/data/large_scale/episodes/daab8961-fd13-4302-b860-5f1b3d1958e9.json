@@ -1,0 +1,10 @@
+{
+  "episode_id": "daab8961-fd13-4302-b860-5f1b3d1958e9",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/daab8961-fd13-4302-b860-5f1b3d1958e9.jsonl"
+}

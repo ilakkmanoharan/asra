@@ -1,0 +1,186 @@
+{
+  "game_id": "arc-sample-replay",
+  "level_id": "level-001",
+  "initial": {
+    "game_id": "arc-sample-replay",
+    "level_id": "level-001",
+    "step_index": 0,
+    "grid": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "status": "NOT_FINISHED",
+    "reward": 0.0
+  },
+  "action_outcomes": {
+    "RESET": "reset",
+    "ACTION1": {
+      "grid": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION2": {
+      "grid": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION3": {
+      "grid": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION4": {
+      "grid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION5": {
+      "grid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION6": {
+      "grid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    },
+    "ACTION7": {
+      "grid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "status": "NOT_FINISHED",
+      "reward": 0.0,
+      "step_index": 1
+    }
+  },
+  "source": "mock-derived-offline-replay"
+}

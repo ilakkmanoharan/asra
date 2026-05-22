@@ -1,0 +1,10 @@
+{
+  "episode_id": "fee19b70-96cf-4294-8000-dd37c24e82e0",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/fee19b70-96cf-4294-8000-dd37c24e82e0.jsonl"
+}

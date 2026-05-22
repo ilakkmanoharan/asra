@@ -1,0 +1,10 @@
+{
+  "episode_id": "fcada275-7ff0-4828-a2a1-01ce4fc4ace7",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/fcada275-7ff0-4828-a2a1-01ce4fc4ace7.jsonl"
+}

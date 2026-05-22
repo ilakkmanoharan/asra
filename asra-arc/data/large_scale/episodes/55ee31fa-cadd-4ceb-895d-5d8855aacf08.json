@@ -1,0 +1,10 @@
+{
+  "episode_id": "55ee31fa-cadd-4ceb-895d-5d8855aacf08",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/55ee31fa-cadd-4ceb-895d-5d8855aacf08.jsonl"
+}

@@ -1,0 +1,10 @@
+{
+  "episode_id": "bedd3146-f2f4-4be1-9456-a3a76911f406",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/bedd3146-f2f4-4be1-9456-a3a76911f406.jsonl"
+}

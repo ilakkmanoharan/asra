@@ -1,0 +1,2 @@
+Install analysis extras: pip install -e '.[analysis]'
+No module named 'matplotlib'

@@ -1,0 +1,173 @@
+{
+  "lincs": {
+    "description": "LINCS L1000 Level-2 GEX delta (978 landmark genes) as perturbation transitions.",
+    "experiment_id": "db-lincs-l1000-v0",
+    "learned_world_model": {
+      "transition_edges": 100,
+      "unique_states": 20
+    },
+    "load_meta": {
+      "cell_pattern": "MCF7",
+      "gctx": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/raw/level2_delta_978.gctx",
+      "n_genes": 48,
+      "n_signatures": 100,
+      "source": "GEO_GSE92742_Level2_GEX_delta",
+      "time_h": null
+    },
+    "mean_changed_genes": 12.0,
+    "num_transitions": 100,
+    "paths": {
+      "state_graph": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/graphs/state_graph.json",
+      "transitions": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/exports/asra_db_lincs_transitions.jsonl"
+    },
+    "top_k_genes": 12,
+    "top_perturbations": [
+      [
+        "perturbation_KDA001_A03",
+        1
+      ],
+      [
+        "perturbation_KDA001_A04",
+        1
+      ],
+      [
+        "perturbation_KDA001_A05",
+        1
+      ],
+      [
+        "perturbation_KDA001_A06",
+        1
+      ],
+      [
+        "perturbation_KDA001_A07",
+        1
+      ],
+      [
+        "perturbation_KDA001_A08",
+        1
+      ],
+      [
+        "perturbation_KDA001_A09",
+        1
+      ],
+      [
+        "perturbation_KDA001_A10",
+        1
+      ],
+      [
+        "perturbation_KDA001_A11",
+        1
+      ],
+      [
+        "perturbation_KDA001_A12",
+        1
+      ]
+    ],
+    "unique_perturbations": 100
+  },
+  "omnipath": {
+    "action_semantics_summary": {
+      "activate": {
+        "count": 514,
+        "mean_changed_genes": 0.7101167315175098
+      },
+      "knockdown": {
+        "count": 486,
+        "mean_changed_genes": 0.5452674897119342
+      }
+    },
+    "description": "OmniPath signaling subgraph as M0 prior; perturbations as ASRA actions; gene activity states.",
+    "experiment_id": "db-omnipath-prior-v0",
+    "learned_world_model": {
+      "transition_edges": 987,
+      "unique_states": 435
+    },
+    "load_meta": {
+      "cache_path": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/omnipath/raw/signaling_interactions.parquet",
+      "genes": [
+        "ABL1",
+        "AKT1",
+        "ARK2C",
+        "ATM",
+        "ATR",
+        "CBL",
+        "CDK1",
+        "CTNNB1",
+        "EGFR",
+        "FYN",
+        "GRB2",
+        "GSK3B",
+        "H3C3",
+        "IKBKB",
+        "JAK1",
+        "JAK2",
+        "LCK",
+        "LYN",
+        "MAPK1",
+        "MAPK14",
+        "MAPK3",
+        "MAPK8",
+        "NOTCH1",
+        "PLK1",
+        "RAF1",
+        "SMAD2",
+        "SMAD3",
+        "SRC",
+        "STAT3",
+        "SYK",
+        "TGFBR1",
+        "TP53"
+      ],
+      "n_edges": 64,
+      "n_genes": 32,
+      "source": "cache"
+    },
+    "max_steps": 25,
+    "num_episodes": 40,
+    "num_transitions": 1000,
+    "paths": {
+      "prior_m0": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/omnipath/graphs/prior_world_model_m0.json",
+      "state_graph": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/omnipath/graphs/state_graph.json",
+      "transitions": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/omnipath/exports/asra_db_omnipath_transitions.jsonl"
+    },
+    "prior_m0": {
+      "n_edges": 64,
+      "n_genes": 32
+    },
+    "prior_predict_match_rate": 1.0,
+    "top_actions": [
+      [
+        "knockdown_TP53",
+        23
+      ],
+      [
+        "activate_SMAD3",
+        23
+      ],
+      [
+        "activate_ATM",
+        22
+      ],
+      [
+        "activate_AKT1",
+        22
+      ],
+      [
+        "knockdown_TGFBR1",
+        21
+      ],
+      [
+        "activate_RAF1",
+        21
+      ],
+      [
+        "knockdown_STAT3",
+        20
+      ],
+      [
+        "activate_LCK",
+        20
+      ]
+    ]
+  }
+}

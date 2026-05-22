@@ -1,0 +1,10 @@
+{
+  "episode_id": "dadb3264-5c1a-4469-a50f-937e9124fd25",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/dadb3264-5c1a-4469-a50f-937e9124fd25.jsonl"
+}

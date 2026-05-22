@@ -18,7 +18,7 @@ def classify_effect(changed_cells: int, total_cells: int, terminal: bool, repeat
     return "small_change" if ratio <= 0.25 else "large_change"
 
 
-def test_actions_from_state(state: dict[str, Any], actions: list[str], observed_results: dict[str, dict[str, Any]] | None = None) -> dict[str, Any]:
+def build_action_test_report(state: dict[str, Any], actions: list[str], observed_results: dict[str, dict[str, Any]] | None = None) -> dict[str, Any]:
     state_hash = state.get("state_hash") or hash_state(state["grid"])
     total_cells = state.get("height", len(state["grid"])) * state.get("width", len(state["grid"][0]))
     reports = []

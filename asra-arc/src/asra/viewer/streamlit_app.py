@@ -1,35 +1,30 @@
-from __future__ import annotations
+"""ASRA Phase 1 viewer: replay, playable lab, animated replay."""
 
-from pathlib import Path
+from __future__ import annotations
 
 import streamlit as st
 
-from asra.utils.serialization import read_jsonl
+from asra.viewer.animated_replay_page import render_animated_replay_page
+from asra.viewer.guided_tutorial_page import render_guided_tutorial_page
+from asra.viewer.lab_page import render_lab_page
+from asra.viewer.replay_page import render_replay_page
 
-st.set_page_config(page_title="ASRA Replay Viewer", layout="wide")
-st.title("ASRA v0.1 Replay Viewer")
+st.set_page_config(page_title="ASRA Viewer", layout="wide", initial_sidebar_state="expanded")
+st.title("ASRA v0.1 Viewer")
+st.caption("Phase 1 tools: inspect logs · play the mock world · animate episodes")
 
-data_dir = Path(st.sidebar.text_input("Data directory", "data"))
-episode_files = sorted((data_dir / "transitions").glob("*.jsonl"))
-if not episode_files:
-    st.info("No episode transition logs found.")
-    st.stop()
+tab_replay, tab_lab, tab_anim, tab_guided = st.tabs(
+    ["Replay (step-by-step)", "ASRA Lab (play)", "Animated replay", "Guided tutorial (10 steps)"]
+)
 
-selected = st.sidebar.selectbox("Episode", episode_files, format_func=lambda path: path.stem)
-transitions = read_jsonl(selected)
-step = st.slider("Step", min_value=0, max_value=max(len(transitions) - 1, 0), value=0)
-row = transitions[step]
+with tab_replay:
+    render_replay_page()
 
-st.subheader(f"Episode {selected.stem} / Step {row['step_index']}")
-st.write({"action": row["action"], "reward": row["reward"], "terminal_state": row["terminal_state"], "status": row["next_state"]["status"]})
-left, right, diff = st.columns(3)
-left.write("State")
-left.dataframe(row["state"]["grid"], hide_index=True)
-right.write("Next State")
-right.dataframe(row["next_state"]["grid"], hide_index=True)
-diff.write("Changed Cells")
-diff.json(row.get("diff", {}).get("changed_cells", []))
-st.write("Metadata")
-st.json(row.get("metadata", {}))
-st.write("State hashes")
-st.code(f"{row['state']['state_hash']} -> {row['next_state']['state_hash']}")
+with tab_lab:
+    render_lab_page()
+
+with tab_anim:
+    render_animated_replay_page()
+
+with tab_guided:
+    render_guided_tutorial_page()

@@ -1,0 +1,61 @@
+{
+  "state_hash": "a2da18aeb9052273a6be32e4ba54ef9c714f7df997ce2db9a89d14519e682a50",
+  "tested_actions": [
+    {
+      "action": "RESET",
+      "changed_cells": 2,
+      "effect_type": "small_change",
+      "next_state_hash": "d4665b979aa743fe2efe0b843bb82cfdd9f43545d38a7202ebc33528a9420fa8",
+      "terminal": false
+    },
+    {
+      "action": "ACTION1",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "4dfaea8d3af9bee1ffecbc11ff2a8ce45143cc975973187f2af7c6a3d5600025",
+      "terminal": false
+    },
+    {
+      "action": "ACTION2",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "97bc67915999f8493ae4c0d66948580d20c68e84a1a2397d7d686e689d941fe1",
+      "terminal": false
+    },
+    {
+      "action": "ACTION3",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "33e39f65f47be04fef94da9851de94bdaaef30c8bf9b7cf334770c473042117f",
+      "terminal": false
+    },
+    {
+      "action": "ACTION4",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "071d8e36ff607504212624c27e1c8ca614ba1c48fbe5f2234e8daede35130fef",
+      "terminal": false
+    },
+    {
+      "action": "ACTION5",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "9059ea98d77f2e8e14c45252d6649c274e89138525710429de32218e2256d038",
+      "terminal": false
+    },
+    {
+      "action": "ACTION6",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "206aabec720933b562e87ef4b80b98c367906fb77e3ef76e2a37aef581fe0344",
+      "terminal": false
+    },
+    {
+      "action": "ACTION7",
+      "changed_cells": 1,
+      "effect_type": "small_change",
+      "next_state_hash": "663adfd2f291c24836abe74508f2a112c2a77ea883021f046d55d6e834c42dfb",
+      "terminal": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "episode_id": "866fcdaf-d29e-483a-9b9a-2189d0f62b86",
+  "num_transitions": 25,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "num_steps": 25,
+    "total_reward": 0.0
+  },
+  "transition_log": "data/transitions/866fcdaf-d29e-483a-9b9a-2189d0f62b86.jsonl"
+}

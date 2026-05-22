@@ -1,0 +1,10 @@
+{
+  "episode_id": "fac21009-7ab9-431d-8761-cda259995972",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/fac21009-7ab9-431d-8761-cda259995972.jsonl"
+}

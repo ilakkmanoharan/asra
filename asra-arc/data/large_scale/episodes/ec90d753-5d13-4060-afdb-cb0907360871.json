@@ -1,0 +1,10 @@
+{
+  "episode_id": "ec90d753-5d13-4060-afdb-cb0907360871",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/ec90d753-5d13-4060-afdb-cb0907360871.jsonl"
+}
