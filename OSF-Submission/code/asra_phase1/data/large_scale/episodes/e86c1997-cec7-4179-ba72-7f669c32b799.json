@@ -1,0 +1,10 @@
+{
+  "episode_id": "e86c1997-cec7-4179-ba72-7f669c32b799",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/e86c1997-cec7-4179-ba72-7f669c32b799.jsonl"
+}

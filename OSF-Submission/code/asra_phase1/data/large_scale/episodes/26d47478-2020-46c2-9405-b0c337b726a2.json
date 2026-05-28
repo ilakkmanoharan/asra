@@ -1,0 +1,10 @@
+{
+  "episode_id": "26d47478-2020-46c2-9405-b0c337b726a2",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/26d47478-2020-46c2-9405-b0c337b726a2.jsonl"
+}

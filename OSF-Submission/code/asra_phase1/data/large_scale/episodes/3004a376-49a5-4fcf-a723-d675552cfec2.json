@@ -1,0 +1,10 @@
+{
+  "episode_id": "3004a376-49a5-4fcf-a723-d675552cfec2",
+  "num_transitions": 40,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "num_steps": 40,
+    "total_reward": 0.0
+  },
+  "transition_log": "data/large_scale/transitions/3004a376-49a5-4fcf-a723-d675552cfec2.jsonl"
+}

@@ -1,0 +1,66 @@
+{
+  "description": "LINCS L1000 Level-2 GEX delta (978 landmark genes) as perturbation transitions.",
+  "experiment_id": "db-lincs-l1000-v0",
+  "learned_world_model": {
+    "transition_edges": 100,
+    "unique_states": 20
+  },
+  "load_meta": {
+    "cell_pattern": "MCF7",
+    "gctx": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/raw/level2_delta_978.gctx",
+    "n_genes": 48,
+    "n_signatures": 100,
+    "source": "GEO_GSE92742_Level2_GEX_delta",
+    "time_h": null
+  },
+  "mean_changed_genes": 12.0,
+  "num_transitions": 100,
+  "paths": {
+    "state_graph": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/graphs/state_graph.json",
+    "transitions": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/lincs/exports/asra_db_lincs_transitions.jsonl"
+  },
+  "top_k_genes": 12,
+  "top_perturbations": [
+    [
+      "perturbation_KDA001_A03",
+      1
+    ],
+    [
+      "perturbation_KDA001_A04",
+      1
+    ],
+    [
+      "perturbation_KDA001_A05",
+      1
+    ],
+    [
+      "perturbation_KDA001_A06",
+      1
+    ],
+    [
+      "perturbation_KDA001_A07",
+      1
+    ],
+    [
+      "perturbation_KDA001_A08",
+      1
+    ],
+    [
+      "perturbation_KDA001_A09",
+      1
+    ],
+    [
+      "perturbation_KDA001_A10",
+      1
+    ],
+    [
+      "perturbation_KDA001_A11",
+      1
+    ],
+    [
+      "perturbation_KDA001_A12",
+      1
+    ]
+  ],
+  "unique_perturbations": 100
+}

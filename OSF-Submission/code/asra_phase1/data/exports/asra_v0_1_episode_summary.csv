@@ -1,0 +1,9 @@
+episode_id,game_id,level_id,num_steps,unique_states,num_cycles,num_dead_ends,final_status,total_reward,actions_used
+5830e744-ad91-4cbb-93be-f38949366c7e,GAME_ID,LEVEL_ID,200,60,31,0,NOT_FINISHED,0.0,"{""ACTION1"": 47, ""ACTION2"": 23, ""ACTION3"": 17, ""ACTION4"": 15, ""ACTION5"": 15, ""ACTION6"": 14, ""ACTION7"": 10, ""RESET"": 59}"
+866fcdaf-d29e-483a-9b9a-2189d0f62b86,mock-game,mock-level,25,11,4,0,NOT_FINISHED,0.0,"{""ACTION1"": 6, ""ACTION2"": 2, ""ACTION3"": 2, ""ACTION4"": 1, ""ACTION5"": 1, ""ACTION6"": 1, ""ACTION7"": 1, ""RESET"": 11}"
+90f22b69-138c-4695-a019-95cf26bef1d3,mock-game,mock-level,25,11,4,0,NOT_FINISHED,0.0,"{""ACTION1"": 6, ""ACTION2"": 2, ""ACTION3"": 2, ""ACTION4"": 1, ""ACTION5"": 1, ""ACTION6"": 1, ""ACTION7"": 1, ""RESET"": 11}"
+ae6b078f-e36d-4145-ad53-e1cb072b55d3,mock-game,mock-level,25,11,4,0,NOT_FINISHED,0.0,"{""ACTION1"": 6, ""ACTION2"": 2, ""ACTION3"": 2, ""ACTION4"": 1, ""ACTION5"": 1, ""ACTION6"": 1, ""ACTION7"": 1, ""RESET"": 11}"
+c14be48f-81a8-4731-9cc1-e2cf528064eb,mock-terminal,demo,12,7,1,0,NOT_FINISHED,0.0,"{""ACTION1"": 1, ""ACTION2"": 1, ""ACTION3"": 1, ""ACTION4"": 1, ""ACTION5"": 1, ""ACTION6"": 1, ""RESET"": 6}"
+d1ecb16f-ccba-45e9-856e-c10057e5c6a9,smoke-game,smoke-level,10,6,1,0,NOT_FINISHED,0.0,"{""ACTION1"": 1, ""ACTION2"": 1, ""ACTION3"": 1, ""ACTION4"": 1, ""ACTION5"": 1, ""RESET"": 5}"
+ff51d6a1-19aa-4589-b89a-f2caf19b4fd9,arc-sample-replay,level-001,15,8,1,0,NOT_FINISHED,0.0,"{""ACTION1"": 1, ""ACTION2"": 1, ""ACTION3"": 1, ""ACTION4"": 1, ""ACTION5"": 1, ""ACTION6"": 1, ""ACTION7"": 1, ""RESET"": 8}"
+ffa89f71-26d1-438d-b1b4-7f33a66d8ed5,mock-terminal,demo,4,3,1,0,WIN,1.0,"{""ACTION1"": 1, ""ACTION2"": 1, ""RESET"": 2}"

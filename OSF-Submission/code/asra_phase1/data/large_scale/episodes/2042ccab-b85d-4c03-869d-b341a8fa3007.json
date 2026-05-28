@@ -1,0 +1,10 @@
+{
+  "episode_id": "2042ccab-b85d-4c03-869d-b341a8fa3007",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/2042ccab-b85d-4c03-869d-b341a8fa3007.jsonl"
+}

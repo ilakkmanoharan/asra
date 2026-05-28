@@ -1,0 +1,368 @@
+{
+  "dataset": "omnipath",
+  "edges": [
+    {
+      "source": "JAK2",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "ATM",
+      "target": "ABL1",
+      "weight": 1.0
+    },
+    {
+      "source": "ATM",
+      "target": "PLK1",
+      "weight": 1.0
+    },
+    {
+      "source": "EGFR",
+      "target": "GRB2",
+      "weight": 1.0
+    },
+    {
+      "source": "JAK1",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "GSK3B",
+      "target": "CTNNB1",
+      "weight": 1.0
+    },
+    {
+      "source": "JAK2",
+      "target": "H3C3",
+      "weight": 1.0
+    },
+    {
+      "source": "SRC",
+      "target": "EGFR",
+      "weight": 1.0
+    },
+    {
+      "source": "SRC",
+      "target": "IKBKB",
+      "weight": 1.0
+    },
+    {
+      "source": "LYN",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "LCK",
+      "target": "SYK",
+      "weight": 1.0
+    },
+    {
+      "source": "SYK",
+      "target": "LCK",
+      "weight": 1.0
+    },
+    {
+      "source": "CBL",
+      "target": "SYK",
+      "weight": 1.0
+    },
+    {
+      "source": "SYK",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "ATR",
+      "target": "ATM",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK8",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK14",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "EGFR",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "CBL",
+      "target": "EGFR",
+      "weight": 1.0
+    },
+    {
+      "source": "EGFR",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK3",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "FYN",
+      "target": "SYK",
+      "weight": 1.0
+    },
+    {
+      "source": "LYN",
+      "target": "SYK",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK14",
+      "target": "EGFR",
+      "weight": 1.0
+    },
+    {
+      "source": "SRC",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "JAK1",
+      "target": "SYK",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "LCK",
+      "weight": 1.0
+    },
+    {
+      "source": "ATR",
+      "target": "TP53",
+      "weight": 1.0
+    },
+    {
+      "source": "ATM",
+      "target": "TP53",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "JAK2",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "GRB2",
+      "weight": 1.0
+    },
+    {
+      "source": "GRB2",
+      "target": "ABL1",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "EGFR",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "CBL",
+      "target": "ABL1",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "CTNNB1",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "TGFBR1",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "TGFBR1",
+      "target": "SMAD2",
+      "weight": 1.0
+    },
+    {
+      "source": "AKT1",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "RAF1",
+      "target": "MAPK1",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "RAF1",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK3",
+      "target": "RAF1",
+      "weight": 1.0
+    },
+    {
+      "source": "ABL1",
+      "target": "SRC",
+      "weight": 1.0
+    },
+    {
+      "source": "SRC",
+      "target": "ABL1",
+      "weight": 1.0
+    },
+    {
+      "source": "AKT1",
+      "target": "GSK3B",
+      "weight": 1.0
+    },
+    {
+      "source": "AKT1",
+      "target": "RAF1",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "AKT1",
+      "target": "IKBKB",
+      "weight": 1.0
+    },
+    {
+      "source": "LCK",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "CBL",
+      "target": "LCK",
+      "weight": 1.0
+    },
+    {
+      "source": "SMAD3",
+      "target": "NOTCH1",
+      "weight": 1.0
+    },
+    {
+      "source": "FYN",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "EGFR",
+      "weight": 1.0
+    },
+    {
+      "source": "SRC",
+      "target": "RAF1",
+      "weight": 1.0
+    },
+    {
+      "source": "GRB2",
+      "target": "CBL",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK3",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK1",
+      "target": "SMAD2",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK3",
+      "target": "SMAD2",
+      "weight": 1.0
+    },
+    {
+      "source": "GSK3B",
+      "target": "SMAD3",
+      "weight": 1.0
+    },
+    {
+      "source": "AKT1",
+      "target": "CTNNB1",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK14",
+      "target": "STAT3",
+      "weight": 1.0
+    },
+    {
+      "source": "MAPK8",
+      "target": "STAT3",
+      "weight": 1.0
+    }
+  ],
+  "metadata": {
+    "cache_path": "/Users/ilakkmanoharan2026/Projects/asra/asra-arc/data/decision_biology/omnipath/raw/signaling_interactions.parquet",
+    "genes": [
+      "ABL1",
+      "AKT1",
+      "ARK2C",
+      "ATM",
+      "ATR",
+      "CBL",
+      "CDK1",
+      "CTNNB1",
+      "EGFR",
+      "FYN",
+      "GRB2",
+      "GSK3B",
+      "H3C3",
+      "IKBKB",
+      "JAK1",
+      "JAK2",
+      "LCK",
+      "LYN",
+      "MAPK1",
+      "MAPK14",
+      "MAPK3",
+      "MAPK8",
+      "NOTCH1",
+      "PLK1",
+      "RAF1",
+      "SMAD2",
+      "SMAD3",
+      "SRC",
+      "STAT3",
+      "SYK",
+      "TGFBR1",
+      "TP53"
+    ],
+    "n_edges": 64,
+    "n_genes": 32,
+    "source": "cache"
+  },
+  "n_edges": 64,
+  "n_genes": 32,
+  "type": "pathway_prior"
+}

@@ -1,0 +1,10 @@
+{
+  "episode_id": "64e70034-27ec-4745-9f3a-4747181c60f6",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/64e70034-27ec-4745-9f3a-4747181c60f6.jsonl"
+}

@@ -1,0 +1,10 @@
+{
+  "episode_id": "62dc9814-fabe-4323-9230-90c994d92029",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/62dc9814-fabe-4323-9230-90c994d92029.jsonl"
+}

@@ -1,0 +1,2187 @@
+{
+  "domain": "decision_biology",
+  "edges": [
+    {
+      "action": "perturbation_KDA001_A03",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_A04",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_A05",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A06",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "f070e8ee6642a79b5409c0f8fc786d4d553a9806b928ef04fe239bc791f9cddc"
+    },
+    {
+      "action": "perturbation_KDA001_A07",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A08",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_A09",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A10",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "9a608054adb014338955e45025b3c9c9eb69fb2f91ea8ae834cce9fecafd0f3b"
+    },
+    {
+      "action": "perturbation_KDA001_A11",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A12",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A13",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A14",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A15",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A16",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_A17",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_A18",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_A19",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_A20",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_A21",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A22",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A23",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_A24",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_B03",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_B04",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B05",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_B06",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B07",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B08",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "3efd4e400eb3364bc8a0da6d89eaddf6a0165d870ee609d71f70592f7254cdc3"
+    },
+    {
+      "action": "perturbation_KDA001_B09",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B10",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B11",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "7eecc5dfddad1a8beb4720eee3d01a14cf414a8925ec65fad84d94fd872671df"
+    },
+    {
+      "action": "perturbation_KDA001_B12",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_B13",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac"
+    },
+    {
+      "action": "perturbation_KDA001_B14",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_B15",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_B16",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_B17",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B18",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_B19",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "d5b2f0057b6ac31038febcd712ba1723d5fcb28519a789b60b24d6cb01cdaa77"
+    },
+    {
+      "action": "perturbation_KDA001_B20",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac"
+    },
+    {
+      "action": "perturbation_KDA001_B21",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_B22",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_B23",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_B24",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a3dec821b596f2a5fbcaa4291bb6c146bc3b07080838058d4de925020e828d2b"
+    },
+    {
+      "action": "perturbation_KDA001_C01",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C02",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C03",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C04",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "aa046ae147c1ba04fed472a9f2eb6f7586de58694c58f3ac5dce471ae3f08180"
+    },
+    {
+      "action": "perturbation_KDA001_C05",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e6b5472012f2058fdb6f596ee4145436676d00339a346d9aa1f5cf6cca25c38c"
+    },
+    {
+      "action": "perturbation_KDA001_C06",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "4e3a1938561e6a511c303f46769e522e9faba9e6f008cf8aec792e7d07d574f1"
+    },
+    {
+      "action": "perturbation_KDA001_C07",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C08",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_C09",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C10",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_C11",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C12",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_C13",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C14",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C15",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_C16",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac"
+    },
+    {
+      "action": "perturbation_KDA001_C17",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e6b5472012f2058fdb6f596ee4145436676d00339a346d9aa1f5cf6cca25c38c"
+    },
+    {
+      "action": "perturbation_KDA001_C18",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_C19",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "3e8796b4c58de2f843a0defaabc6490dabd39a3426ccba17794d45655c45c0ab"
+    },
+    {
+      "action": "perturbation_KDA001_C20",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_C21",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C22",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_C23",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_C24",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_D01",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D02",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D03",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D04",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_D05",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D06",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D07",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D08",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "778f1a802c9b2800a4adc9c7f525dbcac10d652d1f7d948c5aab9528c155e1c2"
+    },
+    {
+      "action": "perturbation_KDA001_D09",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D10",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac"
+    },
+    {
+      "action": "perturbation_KDA001_D11",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D12",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_D13",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442"
+    },
+    {
+      "action": "perturbation_KDA001_D14",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D15",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_D16",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "52d3e651019684c57230d0c9477c6c07046ea9b516bd75d0fccc0495d7ac8a5a"
+    },
+    {
+      "action": "perturbation_KDA001_D17",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_D18",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac"
+    },
+    {
+      "action": "perturbation_KDA001_D19",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_D20",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "6f80d4c0469f5fac4db78c29866f41fbe13d154f410621be633523d8992ec681"
+    },
+    {
+      "action": "perturbation_KDA001_D21",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_D22",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D23",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_D24",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "2a83c4b7fc9370c625f6e30540fb6d6464bb547eb1c886177e8a80922179241c"
+    },
+    {
+      "action": "perturbation_KDA001_E01",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    },
+    {
+      "action": "perturbation_KDA001_E02",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "9a608054adb014338955e45025b3c9c9eb69fb2f91ea8ae834cce9fecafd0f3b"
+    },
+    {
+      "action": "perturbation_KDA001_E03",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_E04",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_E05",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "3efd4e400eb3364bc8a0da6d89eaddf6a0165d870ee609d71f70592f7254cdc3"
+    },
+    {
+      "action": "perturbation_KDA001_E06",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0"
+    },
+    {
+      "action": "perturbation_KDA001_E07",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839"
+    },
+    {
+      "action": "perturbation_KDA001_E08",
+      "avg_reward": 12.0,
+      "count": 1,
+      "diff_summary": {
+        "change_ratio": 0.25,
+        "num_changed_genes": 12
+      },
+      "from": "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072",
+      "to": "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a"
+    }
+  ],
+  "nodes": {
+    "2a83c4b7fc9370c625f6e30540fb6d6464bb547eb1c886177e8a80922179241c": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 0.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "3e8796b4c58de2f843a0defaabc6490dabd39a3426ccba17794d45655c45c0ab": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "3efd4e400eb3364bc8a0da6d89eaddf6a0165d870ee609d71f70592f7254cdc3": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 0.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 2
+    },
+    "4e3a1938561e6a511c303f46769e522e9faba9e6f008cf8aec792e7d07d574f1": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 1.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 0.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "52d3e651019684c57230d0c9477c6c07046ea9b516bd75d0fccc0495d7ac8a5a": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 0.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "6f80d4c0469f5fac4db78c29866f41fbe13d154f410621be633523d8992ec681": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "701173c3ba902433b67c45afa93ec2be7e2402372ebf08ac2b1123f3cd8c9eac": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 0.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 5
+    },
+    "729ed2dd440b66c2ed3d5c2cb64d276cd6651f34617df97a13ec21688f20d9b0": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 32
+    },
+    "739c1823844073405a8dd9c9ba44f6a7b2927b76f8a75d47f4722974fecb8839": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 21
+    },
+    "778f1a802c9b2800a4adc9c7f525dbcac10d652d1f7d948c5aab9528c155e1c2": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 1.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 1.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "7eecc5dfddad1a8beb4720eee3d01a14cf414a8925ec65fad84d94fd872671df": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 1.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "9a608054adb014338955e45025b3c9c9eb69fb2f91ea8ae834cce9fecafd0f3b": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 1.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 2
+    },
+    "a0361d0b0da81e2ba1b7d501900b5404f1fd7e6fb2793e58008494e85ddf102a": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 16
+    },
+    "a3dec821b596f2a5fbcaa4291bb6c146bc3b07080838058d4de925020e828d2b": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 1.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 0.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "aa046ae147c1ba04fed472a9f2eb6f7586de58694c58f3ac5dce471ae3f08180": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 0.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 1.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "d5b2f0057b6ac31038febcd712ba1723d5fcb28519a789b60b24d6cb01cdaa77": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 1.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    },
+    "e6b5472012f2058fdb6f596ee4145436676d00339a346d9aa1f5cf6cca25c38c": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 0.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 2
+    },
+    "e8cc31d9174c9682a4ef5ff2bc322d6e0732d3cb8c1dda41e8ecfde0fcfed442": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 1.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 1.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 9
+    },
+    "e9ae4e1d2876931cb4238a1dd8313e215fa358d687504fecbc0cb544a3dd4072": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 0.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 0.0,
+        "GRN": 0.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 0.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 0.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 0.0,
+        "PAFAH1B1": 0.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 0.0,
+        "PSMD4": 0.0,
+        "PSME1": 0.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 0.0,
+        "SPAG7": 0.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 0.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 100
+    },
+    "f070e8ee6642a79b5409c0f8fc786d4d553a9806b928ef04fe239bc791f9cddc": {
+      "gene_activities": {
+        "ABCF1": 0.0,
+        "ALDOA": 0.0,
+        "APP": 0.0,
+        "ATP6V0B": 0.0,
+        "CALM3": 0.0,
+        "CALU": 0.0,
+        "CAPN1": 0.0,
+        "CIRBP": 0.0,
+        "CLTC": 0.0,
+        "CSRP1": 1.0,
+        "CTSD": 0.0,
+        "DDR1": 0.0,
+        "DNAJB1": 0.0,
+        "ECH1": 0.0,
+        "EPRS": 0.0,
+        "FKBP4": 0.0,
+        "GNAS": 1.0,
+        "GRN": 1.0,
+        "HIF1A": 0.0,
+        "HK1": 0.0,
+        "HSPA1A": 0.0,
+        "HSPD1": 1.0,
+        "HYOU1": 0.0,
+        "IQGAP1": 1.0,
+        "KDELR2": 0.0,
+        "KTN1": 0.0,
+        "MAT2A": 0.0,
+        "MLEC": 1.0,
+        "PAFAH1B1": 1.0,
+        "PAX8": 0.0,
+        "PGAM1": 0.0,
+        "PSMD2": 1.0,
+        "PSMD4": 0.0,
+        "PSME1": 1.0,
+        "PTPRF": 0.0,
+        "RHOA": 0.0,
+        "RNPS1": 0.0,
+        "RPS5": 0.0,
+        "RPS6": 0.0,
+        "SKP1": 0.0,
+        "SMNDC1": 1.0,
+        "SPAG7": 1.0,
+        "STAT1": 0.0,
+        "STMN1": 0.0,
+        "TMED10": 0.0,
+        "TSPAN3": 0.0,
+        "USP22": 1.0,
+        "XBP1": 0.0
+      },
+      "pathway_id": "lincs_mcf7_24h",
+      "visit_count": 1
+    }
+  }
+}

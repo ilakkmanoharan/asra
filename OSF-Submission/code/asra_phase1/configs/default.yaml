@@ -1,0 +1,5 @@
+agent_version: asra-v0.1
+policy: simple_exploration
+data_dir: data
+max_steps: 200
+mock_environment: true

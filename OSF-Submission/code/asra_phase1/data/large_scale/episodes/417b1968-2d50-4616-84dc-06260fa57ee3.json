@@ -1,0 +1,10 @@
+{
+  "episode_id": "417b1968-2d50-4616-84dc-06260fa57ee3",
+  "num_transitions": 40,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "num_steps": 40,
+    "total_reward": 0.0
+  },
+  "transition_log": "data/large_scale/transitions/417b1968-2d50-4616-84dc-06260fa57ee3.jsonl"
+}

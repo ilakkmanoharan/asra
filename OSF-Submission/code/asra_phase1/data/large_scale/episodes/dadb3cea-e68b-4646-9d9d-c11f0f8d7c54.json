@@ -1,0 +1,10 @@
+{
+  "episode_id": "dadb3cea-e68b-4646-9d9d-c11f0f8d7c54",
+  "num_transitions": 40,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "num_steps": 40,
+    "total_reward": 0.0
+  },
+  "transition_log": "data/large_scale/transitions/dadb3cea-e68b-4646-9d9d-c11f0f8d7c54.jsonl"
+}

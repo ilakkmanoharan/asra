@@ -1,0 +1,10 @@
+{
+  "episode_id": "3652caca-2e3d-4944-a3a9-090cfe0a3939",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/3652caca-2e3d-4944-a3a9-090cfe0a3939.jsonl"
+}

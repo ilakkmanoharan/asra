@@ -1,0 +1,6 @@
+agent_version: asra-v0.1
+policy: simple_exploration
+data_dir: data
+arc_agi3:
+  endpoint: ${ASRA_ARC_AGI3_ENDPOINT}
+  api_key: ${ASRA_ARC_AGI3_API_KEY}

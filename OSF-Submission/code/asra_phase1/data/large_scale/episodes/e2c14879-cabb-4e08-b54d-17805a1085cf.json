@@ -1,0 +1,10 @@
+{
+  "episode_id": "e2c14879-cabb-4e08-b54d-17805a1085cf",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/e2c14879-cabb-4e08-b54d-17805a1085cf.jsonl"
+}

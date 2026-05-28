@@ -1,0 +1,10 @@
+{
+  "episode_id": "7892caff-fb4f-46d2-8f1d-09c227bd5a85",
+  "num_transitions": 6,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 6,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/7892caff-fb4f-46d2-8f1d-09c227bd5a85.jsonl"
+}

@@ -1,0 +1,10 @@
+{
+  "episode_id": "e5164afb-60f2-41dc-abc5-17650e42467b",
+  "num_transitions": 9,
+  "summary": {
+    "final_status": "WIN",
+    "num_steps": 9,
+    "total_reward": 1.0
+  },
+  "transition_log": "data/large_scale/transitions/e5164afb-60f2-41dc-abc5-17650e42467b.jsonl"
+}
