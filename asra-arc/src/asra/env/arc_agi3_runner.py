@@ -11,6 +11,7 @@ from asra.env.action_space import SUPPORTED_ACTIONS
 from asra.env.frame_parser import Frame, parse_frame
 from asra.memory.episode_logger import EpisodeLogger
 from asra.memory.transition_schema import make_transition
+from asra.perception.snapshot import object_scenes_enabled
 from asra.utils.hashing import hash_state
 
 
@@ -119,7 +120,17 @@ class ArcAGI3Runner:
             prev = frame
             result = self.step(action)
             grid_diff = diff_grid(prev.grid, result.frame.grid)
-            transition = make_transition(logger.episode_id, prev, action, result.frame, result.reward, grid_diff, policy=getattr(agent, "name", "simple_exploration"), notes=(decision.get("reason", "") if isinstance(decision, dict) else ""))
+            transition = make_transition(
+                logger.episode_id,
+                prev,
+                action,
+                result.frame,
+                result.reward,
+                grid_diff,
+                policy=getattr(agent, "name", "simple_exploration"),
+                notes=(decision.get("reason", "") if isinstance(decision, dict) else ""),
+                include_object_scenes=object_scenes_enabled(),
+            )
             row = transition.to_dict()
             row["metadata"]["dead_end_score"] = dead.get("dead_end_score", 0.0)
             logger.log_transition(transition)

@@ -1,0 +1,19 @@
+{
+  "num_tasks": 400,
+  "num_with_rule_candidates": 400,
+  "pct_with_rule_candidates": 100.0,
+  "num_common_rule_coverage": 391,
+  "pct_common_rule_coverage": 97.75,
+  "avg_objects_per_input_scene": 25.398,
+  "avg_transform_events_per_pair": 30.895,
+  "transform_event_distribution": {
+    "ROTATE": 11768,
+    "DELETE": 11444,
+    "CREATE": 7492,
+    "IDENTITY": 6332,
+    "TRANSLATE": 5074
+  },
+  "parse_errors": 0,
+  "label": "evaluation",
+  "report_dir": "data/analysis/phase2/reports/evaluation"
+}

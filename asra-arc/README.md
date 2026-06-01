@@ -202,8 +202,35 @@ python scripts/decision_biology/run_omnipath_prior_experiment.py
 - Data: `data/decision_biology/omnipath/`
 - Write-up: `private/documents/phase2-decision-biology/omnipath/results.md`
 
-## Phase 2 Next Steps
+## Phase 2 — Abstraction and Symbolic Reasoning
 
-- Action semantics inference (roadmap Phase 2 / 4).
-- Original ARC and symbolic abstraction modules.
+Phase 2 adds **object-centric perception** under `src/asra/perception/`:
+
+| Module | Role |
+|--------|------|
+| `ObjectExtractor` | Connected-component objects on integer grids |
+| `RegionDetector` | Background / content bbox / frame regions |
+| `ShapeMatcher` | Shape similarity (rotation/reflection aware) |
+| `TransformationDetector` | CREATE / DELETE / TRANSLATE / RECOLOR events |
+| `RuleCandidateGenerator` | Heuristic rule templates from demo pairs |
+| `BeforeAfterAnalyzer` | End-to-end ARC task reports |
+
+**Run on ARC tasks:**
+
+```bash
+cd asra-arc
+pip install -e '.[dev]'
+python -m asra run-phase2 --arc-root tests/fixtures/arc_micro --output-dir data/analysis/phase2/reports
+# or
+python scripts/run_phase2_arc_batch.py --arc-root /path/to/arc/training
+```
+
+**Tests:** `pytest tests/test_perception_*.py`
+
+Place Original ARC corpus under `data/arc/original/` (not bundled). Spec: `private/documents/phase2-b/phase2-abstraction-symbolic-reasoning.md`.
+
+## Later phases
+
+- Action semantics on ARC-AGI-3 logs (roadmap Phase 4).
+- MiniGrid exploration / memory (Phase 3).
 - Stronger exploration — not required for Phase 1 completion.

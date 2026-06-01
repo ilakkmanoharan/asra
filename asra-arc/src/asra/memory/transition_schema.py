@@ -39,26 +39,49 @@ def make_transition(
     agent_version: str = "asra-v0.1",
     policy: str = "simple_exploration",
     notes: str = "",
+    include_object_scenes: bool = False,
 ) -> Transition:
     state_hash = hash_state(state.grid)
     next_state_hash = hash_state(next_state.grid)
+    state_payload: dict[str, Any] = {
+        "grid": state.grid,
+        "height": state.height,
+        "width": state.width,
+        "status": state.status,
+        "state_hash": state_hash,
+    }
+    next_payload: dict[str, Any] = {
+        "grid": next_state.grid,
+        "height": next_state.height,
+        "width": next_state.width,
+        "status": next_state.status,
+        "state_hash": next_state_hash,
+    }
+    metadata: dict[str, Any] = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "agent_version": agent_version,
+        "policy": policy,
+        "raw_action_semantics_known": False,
+        "notes": notes,
+        "object_scenes_attached": False,
+    }
+    if include_object_scenes:
+        from asra.perception.snapshot import compact_scene_dict, scene_from_grid
+
+        state_payload["object_scene"] = compact_scene_dict(scene_from_grid(state.grid))
+        next_payload["object_scene"] = compact_scene_dict(scene_from_grid(next_state.grid))
+        metadata["object_scenes_attached"] = True
     return Transition(
         transition_id=str(uuid4()),
         episode_id=episode_id,
         game_id=state.game_id,
         level_id=state.level_id,
         step_index=state.step_index,
-        state={"grid": state.grid, "height": state.height, "width": state.width, "status": state.status, "state_hash": state_hash},
+        state=state_payload,
         action={"name": action, "index": action_index(action)},
-        next_state={"grid": next_state.grid, "height": next_state.height, "width": next_state.width, "status": next_state.status, "state_hash": next_state_hash},
+        next_state=next_payload,
         reward=float(reward),
         terminal_state=next_state.status in {"WIN", "GAME_OVER"},
         diff=diff,
-        metadata={
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "agent_version": agent_version,
-            "policy": policy,
-            "raw_action_semantics_known": False,
-            "notes": notes,
-        },
+        metadata=metadata,
     )

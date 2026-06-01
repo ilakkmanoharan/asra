@@ -1,0 +1,38 @@
+{
+  "synthetic": [
+    {
+      "case": "identity",
+      "expected": "IDENTITY",
+      "got": "IDENTITY",
+      "summary": "IDENTITY",
+      "pass": true
+    },
+    {
+      "case": "create_blob",
+      "expected": "CREATE",
+      "got": "CREATE",
+      "summary": "CREATE",
+      "pass": true
+    },
+    {
+      "case": "delete_blob",
+      "expected": "DELETE",
+      "got": "DELETE",
+      "summary": "DELETE",
+      "pass": true
+    },
+    {
+      "case": "translate_blob",
+      "expected": "TRANSLATE",
+      "got": "TRANSLATE",
+      "summary": "TRANSLATE",
+      "pass": true
+    }
+  ],
+  "synthetic_pass_rate": 1.0,
+  "arcle": {
+    "available": false,
+    "reason": "No module named 'gymnasium'"
+  },
+  "notes": "Synthetic cases validate ASRA object-level detector on controlled grids. ARCLE probe lists env operation names when arcle+gymnasium are installed; full step-by-step parity with ARCLE ops is future work."
+}

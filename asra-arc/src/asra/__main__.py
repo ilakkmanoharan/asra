@@ -77,6 +77,10 @@ def main() -> None:
     viz.add_argument("--graph", default="data/graphs/state_graph.json")
     viz.add_argument("--out-dir", default="data/analysis/graph_viz")
 
+    phase2 = sub.add_parser("run-phase2", help="Run Phase 2 perception on ARC tasks")
+    phase2.add_argument("--arc-root", required=True, help="Directory of ARC task folders or JSON files")
+    phase2.add_argument("--output-dir", default="data/analysis/phase2/reports")
+
     args = parser.parse_args()
 
     if args.command == "run-episode":
@@ -119,6 +123,15 @@ def main() -> None:
 
         script = Path(__file__).resolve().parents[2] / "scripts" / "visualize_state_graph.py"
         subprocess.run([sys.executable, str(script), "--graph", args.graph, "--out-dir", args.out_dir], cwd=script.parent.parent, check=True)
+    elif args.command == "run-phase2":
+        from asra.perception import run_phase2_batch
+
+        paths = run_phase2_batch(args.arc_root, args.output_dir)
+        print(f"Wrote {len(paths)} task reports to {args.output_dir}")
+        for p in paths[:10]:
+            print(p)
+        if len(paths) > 10:
+            print(f"... and {len(paths) - 10} more")
 
 
 if __name__ == "__main__":

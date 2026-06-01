@@ -1,0 +1,703 @@
+[
+  {
+    "task_id": "1990f7a8",
+    "num_train_pairs": 3,
+    "top_rule_pattern": "PER_OBJECT_TRANSLATE",
+    "top_rule_confidence": 0.6666666666666666,
+    "top_rule_support": 2,
+    "all_rules": [
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_CREATE",
+        0.3333333333333333,
+        1
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.3333333333333333,
+        1
+      ],
+      [
+        "PER_OBJECT_ROTATE",
+        0.3333333333333333,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "9 events: CREATE, DELETE, ROTATE",
+        "num_events": 9,
+        "num_input_objects": 8,
+        "num_output_objects": 4,
+        "event_types": [
+          "CREATE",
+          "DELETE",
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "8 events: TRANSLATE",
+        "num_events": 8,
+        "num_input_objects": 8,
+        "num_output_objects": 8,
+        "event_types": [
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "11 events: TRANSLATE",
+        "num_events": 11,
+        "num_input_objects": 11,
+        "num_output_objects": 11,
+        "event_types": [
+          "TRANSLATE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "11 events: TRANSLATE",
+      "8 events: TRANSLATE",
+      "9 events: CREATE, DELETE, ROTATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "32e9702f",
+    "num_train_pairs": 3,
+    "top_rule_pattern": "PER_OBJECT_CREATE",
+    "top_rule_confidence": 0.6666666666666666,
+    "top_rule_support": 2,
+    "all_rules": [
+      [
+        "PER_OBJECT_CREATE",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.6666666666666666,
+        2
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "2 events: CREATE, DELETE",
+        "num_events": 2,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "2 events: TRANSLATE",
+        "num_events": 2,
+        "num_input_objects": 2,
+        "num_output_objects": 2,
+        "event_types": [
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "4 events: CREATE, DELETE, TRANSLATE",
+        "num_events": 4,
+        "num_input_objects": 3,
+        "num_output_objects": 3,
+        "event_types": [
+          "CREATE",
+          "DELETE",
+          "TRANSLATE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "2 events: CREATE, DELETE",
+      "2 events: TRANSLATE",
+      "4 events: CREATE, DELETE, TRANSLATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "3391f8c0",
+    "num_train_pairs": 4,
+    "top_rule_pattern": "PER_OBJECT_ROTATE",
+    "top_rule_confidence": 0.75,
+    "top_rule_support": 3,
+    "all_rules": [
+      [
+        "PER_OBJECT_ROTATE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_CREATE",
+        0.25,
+        1
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.25,
+        1
+      ],
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.25,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "6 events: ROTATE",
+        "num_events": 6,
+        "num_input_objects": 6,
+        "num_output_objects": 6,
+        "event_types": [
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "5 events: ROTATE",
+        "num_events": 5,
+        "num_input_objects": 5,
+        "num_output_objects": 5,
+        "event_types": [
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "8 events: CREATE, DELETE, TRANSLATE",
+        "num_events": 8,
+        "num_input_objects": 7,
+        "num_output_objects": 5,
+        "event_types": [
+          "CREATE",
+          "DELETE",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_3",
+        "summary": "10 events: ROTATE",
+        "num_events": 10,
+        "num_input_objects": 10,
+        "num_output_objects": 10,
+        "event_types": [
+          "ROTATE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "10 events: ROTATE",
+      "5 events: ROTATE",
+      "6 events: ROTATE",
+      "8 events: CREATE, DELETE, TRANSLATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "68b67ca3",
+    "num_train_pairs": 3,
+    "top_rule_pattern": "PER_OBJECT_IDENTITY",
+    "top_rule_confidence": 0.6666666666666666,
+    "top_rule_support": 2,
+    "all_rules": [
+      [
+        "PER_OBJECT_IDENTITY",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_CREATE",
+        0.3333333333333333,
+        1
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.3333333333333333,
+        1
+      ],
+      [
+        "PER_OBJECT_ROTATE",
+        0.3333333333333333,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "7 events: CREATE, DELETE, ROTATE",
+        "num_events": 7,
+        "num_input_objects": 6,
+        "num_output_objects": 4,
+        "event_types": [
+          "CREATE",
+          "DELETE",
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "5 events: IDENTITY, TRANSLATE",
+        "num_events": 5,
+        "num_input_objects": 5,
+        "num_output_objects": 5,
+        "event_types": [
+          "IDENTITY",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "4 events: IDENTITY, TRANSLATE",
+        "num_events": 4,
+        "num_input_objects": 4,
+        "num_output_objects": 4,
+        "event_types": [
+          "IDENTITY",
+          "TRANSLATE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "4 events: IDENTITY, TRANSLATE",
+      "5 events: IDENTITY, TRANSLATE",
+      "7 events: CREATE, DELETE, ROTATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "8a371977",
+    "num_train_pairs": 3,
+    "top_rule_pattern": "PER_OBJECT_ROTATE",
+    "top_rule_confidence": 0.6666666666666666,
+    "top_rule_support": 2,
+    "all_rules": [
+      [
+        "PER_OBJECT_ROTATE",
+        0.6666666666666666,
+        2
+      ],
+      [
+        "PER_OBJECT_CREATE",
+        0.3333333333333333,
+        1
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.3333333333333333,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "9 events: ROTATE",
+        "num_events": 9,
+        "num_input_objects": 9,
+        "num_output_objects": 9,
+        "event_types": [
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "121 events: ROTATE",
+        "num_events": 121,
+        "num_input_objects": 121,
+        "num_output_objects": 121,
+        "event_types": [
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "37 events: CREATE, DELETE",
+        "num_events": 37,
+        "num_input_objects": 1,
+        "num_output_objects": 36,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "121 events: ROTATE",
+      "37 events: CREATE, DELETE",
+      "9 events: ROTATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "d017b73f",
+    "num_train_pairs": 4,
+    "top_rule_pattern": "PER_OBJECT_TRANSLATE",
+    "top_rule_confidence": 0.75,
+    "top_rule_support": 3,
+    "all_rules": [
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_IDENTITY",
+        0.5,
+        2
+      ],
+      [
+        "PER_OBJECT_ROTATE",
+        0.5,
+        2
+      ],
+      [
+        "PER_OBJECT_CREATE",
+        0.25,
+        1
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.25,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "3 events: IDENTITY, TRANSLATE",
+        "num_events": 3,
+        "num_input_objects": 3,
+        "num_output_objects": 3,
+        "event_types": [
+          "IDENTITY",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "4 events: ROTATE, TRANSLATE",
+        "num_events": 4,
+        "num_input_objects": 4,
+        "num_output_objects": 4,
+        "event_types": [
+          "ROTATE",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "3 events: ROTATE, TRANSLATE",
+        "num_events": 3,
+        "num_input_objects": 3,
+        "num_output_objects": 3,
+        "event_types": [
+          "ROTATE",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_3",
+        "summary": "4 events: CREATE, DELETE, IDENTITY",
+        "num_events": 4,
+        "num_input_objects": 3,
+        "num_output_objects": 2,
+        "event_types": [
+          "CREATE",
+          "DELETE",
+          "IDENTITY"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "3 events: IDENTITY, TRANSLATE",
+      "3 events: ROTATE, TRANSLATE",
+      "4 events: CREATE, DELETE, IDENTITY",
+      "4 events: ROTATE, TRANSLATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "d4b1c2b1",
+    "num_train_pairs": 7,
+    "top_rule_pattern": "PER_OBJECT_CREATE",
+    "top_rule_confidence": 0.7142857142857143,
+    "top_rule_support": 5,
+    "all_rules": [
+      [
+        "PER_OBJECT_CREATE",
+        0.7142857142857143,
+        5
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.7142857142857143,
+        5
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "4 events: CREATE, DELETE",
+        "num_events": 4,
+        "num_input_objects": 2,
+        "num_output_objects": 2,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "4 events: CREATE, DELETE",
+        "num_events": 4,
+        "num_input_objects": 2,
+        "num_output_objects": 2,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "12 events: CREATE, DELETE",
+        "num_events": 12,
+        "num_input_objects": 6,
+        "num_output_objects": 6,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_3",
+        "summary": "IDENTITY",
+        "num_events": 0,
+        "num_input_objects": 0,
+        "num_output_objects": 0,
+        "event_types": []
+      },
+      {
+        "pair_id": "train_4",
+        "summary": "IDENTITY",
+        "num_events": 0,
+        "num_input_objects": 0,
+        "num_output_objects": 0,
+        "event_types": []
+      },
+      {
+        "pair_id": "train_5",
+        "summary": "2 events: CREATE, DELETE",
+        "num_events": 2,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_6",
+        "summary": "6 events: CREATE, DELETE",
+        "num_events": 6,
+        "num_input_objects": 3,
+        "num_output_objects": 3,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "12 events: CREATE, DELETE",
+      "2 events: CREATE, DELETE",
+      "4 events: CREATE, DELETE",
+      "6 events: CREATE, DELETE",
+      "IDENTITY"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "e78887d1",
+    "num_train_pairs": 4,
+    "top_rule_pattern": "PER_OBJECT_DELETE",
+    "top_rule_confidence": 0.75,
+    "top_rule_support": 3,
+    "all_rules": [
+      [
+        "PER_OBJECT_DELETE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_ROTATE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_TRANSLATE",
+        0.5,
+        2
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "12 events: DELETE, TRANSLATE",
+        "num_events": 12,
+        "num_input_objects": 12,
+        "num_output_objects": 4,
+        "event_types": [
+          "DELETE",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "14 events: DELETE, ROTATE",
+        "num_events": 14,
+        "num_input_objects": 14,
+        "num_output_objects": 7,
+        "event_types": [
+          "DELETE",
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "7 events: ROTATE, TRANSLATE",
+        "num_events": 7,
+        "num_input_objects": 7,
+        "num_output_objects": 7,
+        "event_types": [
+          "ROTATE",
+          "TRANSLATE"
+        ]
+      },
+      {
+        "pair_id": "train_3",
+        "summary": "16 events: DELETE, ROTATE",
+        "num_events": 16,
+        "num_input_objects": 16,
+        "num_output_objects": 8,
+        "event_types": [
+          "DELETE",
+          "ROTATE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "12 events: DELETE, TRANSLATE",
+      "14 events: DELETE, ROTATE",
+      "16 events: DELETE, ROTATE",
+      "7 events: ROTATE, TRANSLATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  },
+  {
+    "task_id": "fc754716",
+    "num_train_pairs": 4,
+    "top_rule_pattern": "PER_OBJECT_CREATE",
+    "top_rule_confidence": 0.75,
+    "top_rule_support": 3,
+    "all_rules": [
+      [
+        "PER_OBJECT_CREATE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_DELETE",
+        0.75,
+        3
+      ],
+      [
+        "PER_OBJECT_ROTATE",
+        0.25,
+        1
+      ]
+    ],
+    "per_pair": [
+      {
+        "pair_id": "train_0",
+        "summary": "ROTATE",
+        "num_events": 1,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "ROTATE"
+        ]
+      },
+      {
+        "pair_id": "train_1",
+        "summary": "2 events: CREATE, DELETE",
+        "num_events": 2,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_2",
+        "summary": "2 events: CREATE, DELETE",
+        "num_events": 2,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      },
+      {
+        "pair_id": "train_3",
+        "summary": "2 events: CREATE, DELETE",
+        "num_events": 2,
+        "num_input_objects": 1,
+        "num_output_objects": 1,
+        "event_types": [
+          "CREATE",
+          "DELETE"
+        ]
+      }
+    ],
+    "inconsistent_demo_summaries": true,
+    "unique_transform_summaries": [
+      "2 events: CREATE, DELETE",
+      "ROTATE"
+    ],
+    "likely_cause": "mixed_transform_types_across_demos"
+  }
+]

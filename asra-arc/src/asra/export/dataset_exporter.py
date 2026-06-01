@@ -50,20 +50,32 @@ def export_dataset(input_dir: str | Path = "data/transitions", output_dir: str |
 
 
 def _flatten_transition(row: dict[str, Any]) -> dict[str, Any]:
-    return {
+    state = row["state"]
+    next_state = row["next_state"]
+    state_scene = state.get("object_scene") or {}
+    next_scene = next_state.get("object_scene") or {}
+    flat: dict[str, Any] = {
         "episode_id": row["episode_id"],
         "game_id": row["game_id"],
         "level_id": row["level_id"],
         "step_index": row["step_index"],
-        "state": row["state"],
+        "state": state,
         "action": row["action"],
-        "next_state": row["next_state"],
+        "next_state": next_state,
         "reward": row["reward"],
         "terminal_state": row["terminal_state"],
         "metadata": row.get("metadata", {}),
-        "state_hash": row["state"]["state_hash"],
-        "next_state_hash": row["next_state"]["state_hash"],
+        "state_hash": state["state_hash"],
+        "next_state_hash": next_state["state_hash"],
         "diff": row.get("diff", {}),
         "policy_name": row.get("metadata", {}).get("policy", "simple_exploration"),
         "agent_version": row.get("metadata", {}).get("agent_version", "asra-v0.1"),
+        "state_num_objects": state_scene.get("num_objects"),
+        "next_state_num_objects": next_scene.get("num_objects"),
+        "object_scenes_attached": row.get("metadata", {}).get("object_scenes_attached", False),
     }
+    if state_scene:
+        flat["state_object_scene"] = state_scene
+    if next_scene:
+        flat["next_state_object_scene"] = next_scene
+    return flat

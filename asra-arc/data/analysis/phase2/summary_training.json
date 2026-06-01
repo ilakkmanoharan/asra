@@ -1,0 +1,29 @@
+{
+  "num_tasks": 400,
+  "num_with_rule_candidates": 400,
+  "pct_with_rule_candidates": 100.0,
+  "num_common_rule_coverage": 392,
+  "pct_common_rule_coverage": 98.0,
+  "avg_objects_per_input_scene": 13.159,
+  "avg_transform_events_per_pair": 16.862,
+  "transform_event_distribution": {
+    "DELETE": 6588,
+    "ROTATE": 5065,
+    "CREATE": 4821,
+    "IDENTITY": 3334,
+    "TRANSLATE": 2146
+  },
+  "parse_errors": 0,
+  "exception_task_ids": [
+    "22eb0ac0",
+    "67385a82",
+    "794b24be",
+    "9565186b",
+    "a740d043",
+    "aedd82e4",
+    "b1948b0a",
+    "cce03e0d"
+  ],
+  "label": "training",
+  "report_dir": "data/analysis/phase2/reports/training"
+}

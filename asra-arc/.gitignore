@@ -7,3 +7,9 @@ private/
 
 # LINCS L1000 raw downloads (GEO GSE92742; files exceed GitHub 100 MB limit)
 data/decision_biology/lincs/raw/
+
+# Phase 2 generated reports (regenerate via scripts/run_phase2_arc_batch.py)
+data/analysis/phase2/reports/
+
+# ARC mirror clone (regenerate via data/arc/README.md)
+data/arc/original/_repo/
