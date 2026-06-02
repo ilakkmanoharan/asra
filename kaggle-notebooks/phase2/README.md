@@ -1,8 +1,11 @@
-# Phase 2 Kaggle submission
+# Phase 2 — Kaggle & evaluation docs
 
-**Concept article:** [`asra-phase2-object-centric-reasoning.md`](asra-phase2-object-centric-reasoning.md) — theory, architecture, and Phase 1→2 bridge (no submission/env how-to).
+| Document | Purpose |
+|----------|---------|
+| [`asra-phase2-object-centric-reasoning.md`](asra-phase2-object-centric-reasoning.md) | Theory, architecture, Phase 1→2 bridge |
+| [`phase2-evaluation-claims.md`](phase2-evaluation-claims.md) | **800-task ARC eval — what’s true, caveats, wording** |
+| [`asra-phase-2-arc-prize-2026.ipynb`](asra-phase-2-arc-prize-2026.ipynb) | Competition notebook (`asra-v0.4-phase2`) |
 
-**Notebook:** `asra-phase-2-arc-prize-2026.ipynb`  
 **Kernel:** https://www.kaggle.com/code/ilakkmanoharan/asra-phase-2-arc-prize-2026  
 **Competition:** `arc-prize-2026-arc-agi-3`
 

@@ -1,0 +1,10 @@
+{
+  "episode_id": "ddb442d0-c13a-4635-b222-d9d90804b96a",
+  "num_transitions": 30,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "num_steps": 30,
+    "total_reward": 0.0
+  },
+  "transition_log": "data/arc_exploration/ablation/baseline/transitions/ddb442d0-c13a-4635-b222-d9d90804b96a.jsonl"
+}

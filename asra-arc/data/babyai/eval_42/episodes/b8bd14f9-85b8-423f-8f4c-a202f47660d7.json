@@ -1,0 +1,14 @@
+{
+  "episode_id": "b8bd14f9-85b8-423f-8f4c-a202f47660d7",
+  "num_transitions": 37,
+  "summary": {
+    "env_id": "BabyAI-GoToRedBallGrey-v0",
+    "steps": 37,
+    "strategy_reused": false,
+    "subgoal_completions": 1,
+    "success": true,
+    "total_reward": 0.47968749999999993,
+    "unique_nodes": 14
+  },
+  "transition_log": "data/babyai/eval_42/transitions/b8bd14f9-85b8-423f-8f4c-a202f47660d7.jsonl"
+}

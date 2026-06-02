@@ -229,8 +229,45 @@ python scripts/run_phase2_arc_batch.py --arc-root /path/to/arc/training
 
 Place Original ARC corpus under `data/arc/original/` (not bundled). Spec: `private/documents/phase2-b/phase2-abstraction-symbolic-reasoning.md`.
 
+## Phase 3 — Exploration, Memory, and Navigation
+
+Phase 3 adds **exploration engine v1** under `src/asra/exploration/`:
+
+| Module | Role |
+|--------|------|
+| `ExplorationGraph` | Visit counts, frontiers, exploration metadata on edges |
+| `VisitationMemory` | Hash + object-fingerprint revisit tracking |
+| `NoveltyScorer` / `UsefulnessScorer` | Action ranking signals |
+| `ExplorationPolicyV2` | Phase 3 policy (vs Phase 1 simple exploration) |
+| `StrategyLibrary` | Extract/reuse DoorKey action sequences across episodes |
+| `SubgoalDetector` | BabyAI mission + DoorKey milestone tracking |
+| `MiniGridRunner` / `BabyAIRunner` | Gymnasium episodes → JSONL transitions |
+| `ArcExplorationRunner` | ARC-AGI-3 mock/replay with dual-key novelty |
+| `TransitionReplayBuffer` | Priority replay export (`data/*/replay/`) |
+
+**Run MiniGrid / BabyAI / ARC (requires `[exploration]` extra):**
+
+```bash
+pip install -e '.[dev,exploration]'
+
+python -m asra run-minigrid --env MiniGrid-DoorKey-8x8-v0 --episodes 20 --max-steps 300
+python -m asra run-babyai --env BabyAI-GoToRedBallGrey-v0 --episodes 10
+python -m asra run-arc-exploration --mock --max-steps 50
+python -m asra eval-doorkey --episodes 20 --max-steps 300
+
+python -m asra build-exploration-graph --input-dir data/minigrid/transitions
+python scripts/eval_phase3_minigrid.py --transition-dir data/minigrid/transitions
+python scripts/eval_phase3_babyai.py --episodes 10
+python scripts/eval_phase3_arc_ablation.py --max-steps 50
+```
+
+**Kaggle hints:** `kaggle-notebooks/asra_phase3_exploration_hints.py` (compact visit/novelty scoring).
+
+**Tests:** `pytest tests/test_exploration_*.py`
+
+Spec: `kaggle-notebooks/phase3/phase3-exploration-memory-navigation.md`.
+
 ## Later phases
 
 - Action semantics on ARC-AGI-3 logs (roadmap Phase 4).
-- MiniGrid exploration / memory (Phase 3).
-- Stronger exploration — not required for Phase 1 completion.
+- Stronger planning stack (roadmap Phase 6).

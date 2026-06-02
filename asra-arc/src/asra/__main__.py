@@ -81,6 +81,40 @@ def main() -> None:
     phase2.add_argument("--arc-root", required=True, help="Directory of ARC task folders or JSON files")
     phase2.add_argument("--output-dir", default="data/analysis/phase2/reports")
 
+    minigrid = sub.add_parser("run-minigrid", help="Run Phase 3 MiniGrid episodes with exploration v2")
+    minigrid.add_argument("--env", default="MiniGrid-Empty-8x8-v0")
+    minigrid.add_argument("--episodes", type=int, default=10)
+    minigrid.add_argument("--max-steps", type=int, default=200)
+    minigrid.add_argument("--data-dir", default="data/minigrid")
+    minigrid.add_argument("--seed", type=int, default=42)
+    minigrid.add_argument("--object-scenes", action="store_true")
+
+    babyai = sub.add_parser("run-babyai", help="Run Phase 3 BabyAI episodes with subgoal tagging")
+    babyai.add_argument("--env", default="BabyAI-GoToRedBallGrey-v0")
+    babyai.add_argument("--episodes", type=int, default=10)
+    babyai.add_argument("--max-steps", type=int, default=200)
+    babyai.add_argument("--data-dir", default="data/babyai")
+    babyai.add_argument("--seed", type=int, default=42)
+
+    arc_exp = sub.add_parser("run-arc-exploration", help="Run ARC-AGI-3 episode with Phase 3 exploration engine")
+    arc_exp.add_argument("--max-steps", type=int, default=200)
+    arc_exp.add_argument("--data-dir", default="data/arc_exploration")
+    arc_exp.add_argument("--game-id", default="mock-game")
+    arc_exp.add_argument("--level-id", default="mock-level")
+    _add_backend_args(arc_exp)
+    arc_exp.set_defaults(mock=True)
+
+    doorkey_bench = sub.add_parser("eval-doorkey", help="Benchmark DoorKey: Phase 3 v2 vs Phase 1 baseline")
+    doorkey_bench.add_argument("--env", default="MiniGrid-DoorKey-8x8-v0")
+    doorkey_bench.add_argument("--episodes", type=int, default=20)
+    doorkey_bench.add_argument("--max-steps", type=int, default=300)
+    doorkey_bench.add_argument("--seed", type=int, default=42)
+    doorkey_bench.add_argument("--output", default="data/analysis/phase3/doorkey_benchmark.json")
+
+    exp_graph = sub.add_parser("build-exploration-graph", help="Build Phase 3 exploration graph from transitions")
+    exp_graph.add_argument("--input-dir", default="data/minigrid/transitions")
+    exp_graph.add_argument("--output", default="data/minigrid/graphs/exploration_graph.json")
+
     args = parser.parse_args()
 
     if args.command == "run-episode":
@@ -132,6 +166,66 @@ def main() -> None:
             print(p)
         if len(paths) > 10:
             print(f"... and {len(paths) - 10} more")
+    elif args.command == "run-minigrid":
+        from asra.exploration import run_minigrid_batch
+
+        results = run_minigrid_batch(
+            args.env,
+            episodes=args.episodes,
+            max_steps=args.max_steps,
+            data_dir=args.data_dir,
+            seed=args.seed,
+        )
+        for r in results:
+            print(r)
+        print(f"Completed {len(results)} episodes")
+    elif args.command == "run-babyai":
+        from asra.exploration import run_babyai_batch
+
+        results = run_babyai_batch(
+            args.env,
+            episodes=args.episodes,
+            max_steps=args.max_steps,
+            data_dir=args.data_dir,
+            seed=args.seed,
+        )
+        for r in results:
+            print(r)
+        print(f"Completed {len(results)} BabyAI episodes")
+    elif args.command == "run-arc-exploration":
+        from asra.exploration.arc_exploration import ArcExplorationRunner
+
+        if not args.mock and not args.live and not args.replay_file:
+            args.mock = True
+        runner = ArcExplorationRunner(_runner_from_args(args), data_dir=args.data_dir)
+        result = runner.run_episode(max_steps=args.max_steps)
+        print(result)
+    elif args.command == "eval-doorkey":
+        import subprocess
+        import sys
+
+        script = Path(__file__).resolve().parents[2] / "scripts" / "eval_phase3_doorkey_benchmark.py"
+        cmd = [
+            sys.executable,
+            str(script),
+            "--env",
+            args.env,
+            "--episodes",
+            str(args.episodes),
+            "--max-steps",
+            str(args.max_steps),
+            "--seed",
+            str(args.seed),
+            "--output",
+            args.output,
+        ]
+        subprocess.run(cmd, cwd=script.parent.parent, check=True)
+    elif args.command == "build-exploration-graph":
+        from asra.exploration import build_exploration_graph_from_transitions
+
+        graph = build_exploration_graph_from_transitions(args.input_dir)
+        graph.save(args.output)
+        print(f"Wrote {args.output} ({graph.unique_nodes()} nodes)")
 
 
 if __name__ == "__main__":

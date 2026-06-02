@@ -1,0 +1,10 @@
+{
+  "episodes": 2,
+  "steps": 100,
+  "successes": 0,
+  "success_rate": 0.0,
+  "total_reward": 0.0,
+  "revisit_rate": 0.67,
+  "novel_step_rate": 0.33,
+  "unique_nodes": 24
+}

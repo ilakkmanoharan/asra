@@ -1,0 +1,3 @@
+episode_id,mission,success,steps,subgoal_accuracy,logged_events,oracle_events
+4a50a7c7-d9ce-4da1-94cd-1c7942630e26,go to the red ball,True,37,1.0,1,1
+3adcebe8-6848-4c35-a39c-c0ec661947cc,go to the red ball,False,64,1.0,0,0

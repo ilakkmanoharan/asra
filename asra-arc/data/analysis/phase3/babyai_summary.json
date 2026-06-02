@@ -1,0 +1,28 @@
+{
+  "env_id": "BabyAI-GoToRedBallGrey-v0",
+  "episodes": 2,
+  "mean_subgoal_accuracy": 1.0,
+  "success_rate": 0.5,
+  "episodes_detail": [
+    {
+      "episode_id": "4a50a7c7-d9ce-4da1-94cd-1c7942630e26",
+      "mission": "go to the red ball",
+      "success": true,
+      "steps": 37,
+      "logged_events": 1,
+      "oracle_events": 1,
+      "matched_events": 1,
+      "subgoal_accuracy": 1.0
+    },
+    {
+      "episode_id": "3adcebe8-6848-4c35-a39c-c0ec661947cc",
+      "mission": "go to the red ball",
+      "success": false,
+      "steps": 64,
+      "logged_events": 0,
+      "oracle_events": 0,
+      "matched_events": 0,
+      "subgoal_accuracy": 1.0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "max_steps": 30,
+  "baseline": {
+    "policy": "simple_exploration",
+    "steps": 30,
+    "total_reward": 0.0,
+    "final_status": "NOT_FINISHED",
+    "unique_nodes": 13,
+    "loop_count": 17,
+    "episode_id": "ddb442d0-c13a-4635-b222-d9d90804b96a"
+  },
+  "phase3": {
+    "policy": "exploration_v2",
+    "steps": 30,
+    "total_reward": 0.0,
+    "final_status": "NOT_FINISHED",
+    "unique_nodes": 12,
+    "loop_count": 17,
+    "episode_id": "42d5c587-cad8-486d-b781-348faa5da725"
+  },
+  "phase3_more_unique_nodes": false,
+  "phase3_fewer_loops": true,
+  "non_regression_reward": true
+}

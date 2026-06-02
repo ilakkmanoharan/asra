@@ -1,0 +1,12 @@
+{
+  "episode_id": "42d5c587-cad8-486d-b781-348faa5da725",
+  "num_transitions": 30,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "loop_count": 17,
+    "num_steps": 30,
+    "total_reward": 0.0,
+    "unique_nodes": 12
+  },
+  "transition_log": "data/arc_exploration/ablation/phase3/transitions/42d5c587-cad8-486d-b781-348faa5da725.jsonl"
+}

@@ -1,0 +1,14 @@
+{
+  "episode_id": "92e1acf9-f15f-434e-aa01-423bda672354",
+  "num_transitions": 150,
+  "summary": {
+    "env_id": "MiniGrid-DoorKey-8x8-v0",
+    "steps": 150,
+    "strategy_reused": true,
+    "subgoal_completions": 0,
+    "success": false,
+    "total_reward": 0.0,
+    "unique_nodes": 124
+  },
+  "transition_log": "data/minigrid/doorkey_v2/transitions/92e1acf9-f15f-434e-aa01-423bda672354.jsonl"
+}

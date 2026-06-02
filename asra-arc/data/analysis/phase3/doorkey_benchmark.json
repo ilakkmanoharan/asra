@@ -1,0 +1,27 @@
+{
+  "env_id": "MiniGrid-DoorKey-8x8-v0",
+  "episodes": 5,
+  "max_steps": 150,
+  "phase3_v2": {
+    "episodes": 5,
+    "successes": 0,
+    "success_rate": 0.0,
+    "mean_steps": 150.0,
+    "median_success_steps": null,
+    "revisit_rate": 0.78,
+    "unique_nodes": 165,
+    "strategy_reuse_episodes": 5
+  },
+  "phase1_baseline": {
+    "episodes": 5,
+    "successes": 0,
+    "success_rate": 0.0,
+    "mean_steps": 150.0,
+    "median_success_steps": null,
+    "revisit_rate": 0.6453,
+    "unique_nodes": 265,
+    "strategy_reuse_episodes": 0
+  },
+  "v2_beats_baseline_success": false,
+  "v2_lower_revisit_rate": false
+}

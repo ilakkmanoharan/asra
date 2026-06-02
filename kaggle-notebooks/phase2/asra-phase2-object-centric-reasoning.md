@@ -221,7 +221,7 @@ This is a deliberate **soft integration**: Phase 2 hints steer search; they do n
 
 ## 8. Empirical landscape (Original ARC)
 
-Batch evaluation over 800 tasks (400 training + 400 evaluation) yields stable headline facts useful for theory, not leaderboard claims:
+Batch evaluation over 800 tasks (400 training + 400 evaluation) yields stable headline facts useful for theory, not leaderboard claims. **Precise definitions, caveats, and recommended public wording:** [`phase2-evaluation-claims.md`](phase2-evaluation-claims.md).
 
 | Observation | Training (~400) | Evaluation (~400) |
 |-------------|-----------------|-------------------|
@@ -254,7 +254,7 @@ Phase 2 teaches ASRA the **vocabulary of change**—create, destroy, move, rotat
 2. **Causal semantics** — Phase 4 maps action tokens to transform families using Phase 2 event types as effect descriptors.  
 3. **Solver coupling** — rule candidates must compile into executable hypotheses on test inputs, not stop at classification.  
 4. **Matcher robustness** — reduce DELETE/CREATE churn from over-segmentation and under-segmentation.  
-5. **Unified metrics** — relate demo-consistency scores to interactive progress (levels completed, win rate).
+5. **Unified metrics** — relate demo-consistency scores to interactive progress (levels completed, win rate). Phase 3 spec: [`../phase3/phase3-exploration-memory-navigation.md`](../phase3/phase3-exploration-memory-navigation.md).
 
 ---
 
@@ -272,7 +272,8 @@ The Phase 2 interactive extension is not a new agent philosophy; it is the same 
 - ASRA roadmap — `ASRA-roadmap-datasets.md` (Phase 2: abstraction and symbolic reasoning)  
 - Phase 1 article — transition-centric adaptive reasoning (Experience Engine)  
 - Phase 2 implementation — `asra-arc/src/asra/perception/`  
-- Phase 2 evaluation — `asra-arc/data/analysis/phase2/PHASE2_EVALUATION_REPORT.md`
+- Phase 2 evaluation — `asra-arc/data/analysis/phase2/PHASE2_EVALUATION_REPORT.md`  
+- Phase 2 evaluation claims & caveats — [`phase2-evaluation-claims.md`](phase2-evaluation-claims.md)
 
 ---
 

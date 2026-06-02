@@ -1,0 +1,12 @@
+{
+  "episode_id": "a863100f-c85a-453d-b9bf-21b6eb6789db",
+  "num_transitions": 50,
+  "summary": {
+    "env_id": "MiniGrid-Empty-8x8-v0",
+    "steps": 50,
+    "success": false,
+    "total_reward": 0.0,
+    "unique_nodes": 12
+  },
+  "transition_log": "data/minigrid/transitions/a863100f-c85a-453d-b9bf-21b6eb6789db.jsonl"
+}
