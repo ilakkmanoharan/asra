@@ -1,0 +1,12 @@
+{
+  "episode_id": "b905b3b2-5619-4770-8106-6a06a7644de8",
+  "num_transitions": 15,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "loop_count": 9,
+    "num_steps": 15,
+    "total_reward": 0.0,
+    "unique_nodes": 7
+  },
+  "transition_log": "data/arc_exploration/transitions/b905b3b2-5619-4770-8106-6a06a7644de8.jsonl"
+}

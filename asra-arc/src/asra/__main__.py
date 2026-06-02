@@ -115,6 +115,14 @@ def main() -> None:
     exp_graph.add_argument("--input-dir", default="data/minigrid/transitions")
     exp_graph.add_argument("--output", default="data/minigrid/graphs/exploration_graph.json")
 
+    semantics = sub.add_parser("build-action-semantics", help="Build Phase 4 action semantics from transitions")
+    semantics.add_argument("--input-dir", default="data/transitions")
+    semantics.add_argument("--output-dir", default="data/causality/arc/semantics")
+
+    phase4_eval = sub.add_parser("eval-phase4-arc", help="Evaluate Phase 4 semantics on transition logs")
+    phase4_eval.add_argument("--input-dir", default="data/transitions")
+    phase4_eval.add_argument("--output", default="data/analysis/phase4/arc_semantics_eval.json")
+
     args = parser.parse_args()
 
     if args.command == "run-episode":
@@ -226,6 +234,27 @@ def main() -> None:
         graph = build_exploration_graph_from_transitions(args.input_dir)
         graph.save(args.output)
         print(f"Wrote {args.output} ({graph.unique_nodes()} nodes)")
+    elif args.command == "build-action-semantics":
+        from asra.causality import build_semantics_from_transitions
+
+        import json
+
+        result = build_semantics_from_transitions(args.input_dir, args.output_dir)
+        print(json.dumps(result, indent=2))
+    elif args.command == "eval-phase4-arc":
+        import subprocess
+        import sys
+
+        script = Path(__file__).resolve().parents[2] / "scripts" / "eval_phase4_arc_semantics.py"
+        cmd = [
+            sys.executable,
+            str(script),
+            "--input-dir",
+            args.input_dir,
+            "--output",
+            args.output,
+        ]
+        subprocess.run(cmd, cwd=script.parent.parent, check=True)
 
 
 if __name__ == "__main__":
