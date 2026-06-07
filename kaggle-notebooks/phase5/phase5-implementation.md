@@ -1,6 +1,6 @@
 # Phase 5 — Implementation Reference
 
-**Status:** Spec + Kaggle agent complete in `private/phase5/`; library `asra-arc/src/asra/goals/` **planned**  
+**Status:** **COMPLETE** — library `asra-arc/src/asra/goals/` + Kaggle v0.7-phase5  
 **Agent tag:** `asra-v0.7-phase5`  
 **Spec:** [`phase5-goal-inference-hypothesis-engine.md`](phase5-goal-inference-hypothesis-engine.md)
 

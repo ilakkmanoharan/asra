@@ -1,0 +1,12 @@
+{
+  "episode_id": "75b05b97-424a-41cb-8dec-fd56f6a93360",
+  "num_transitions": 15,
+  "summary": {
+    "final_status": "NOT_FINISHED",
+    "loop_count": 9,
+    "num_steps": 15,
+    "total_reward": 0.0,
+    "unique_nodes": 7
+  },
+  "transition_log": "data/arc_exploration/transitions/75b05b97-424a-41cb-8dec-fd56f6a93360.jsonl"
+}

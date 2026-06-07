@@ -1,0 +1,16 @@
+{
+  "id": "ilakkmanoharan/asra-phase-8-arc-prize-2026",
+  "title": "ASRA Phase 8 \u2014 ARC Prize 2026",
+  "code_file": "asra-phase-8-arc-prize-2026.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "competition_sources": [
+    "arc-prize-2026-arc-agi-3"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

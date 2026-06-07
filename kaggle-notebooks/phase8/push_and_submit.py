@@ -19,9 +19,9 @@ from kagglesdk.kernels.types.kernels_api_service import (
 from kagglesdk.kernels.types.kernels_enums import KernelExecutionType, KernelWorkerStatus
 
 HERE = Path(__file__).resolve().parent
-KERNEL_SLUG = "ilakkmanoharan/asra-phase-5-arc-prize-2026"
+KERNEL_SLUG = "ilakkmanoharan/asra-phase-8-arc-prize-2026"
 COMP = "arc-prize-2026-arc-agi-3"
-NOTEBOOK = HERE / "asra-phase-5-arc-prize-2026.ipynb"
+NOTEBOOK = HERE / "asra-phase-8-arc-prize-2026.ipynb"
 
 
 def _token() -> str:
@@ -37,7 +37,7 @@ def push(client: KaggleClient) -> int:
     text = NOTEBOOK.read_text(encoding="utf-8")
     req = ApiSaveKernelRequest()
     req.slug = KERNEL_SLUG
-    req.new_title = "ASRA Phase 5 — ARC Prize 2026"
+    req.new_title = "ASRA Phase 8 — ARC Prize 2026"
     req.text = text
     req.language = "python"
     req.kernel_type = "notebook"
@@ -96,7 +96,7 @@ def submit(client: KaggleClient, version: int, message: str) -> int:
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Push + submit ASRA Phase 5 Kaggle notebook")
+    p = argparse.ArgumentParser(description="Push + submit ASRA Phase 8 Kaggle notebook")
     p.add_argument("--message", default="ASRA v0.7-phase5 goal inference")
     p.add_argument("--skip-push", action="store_true")
     p.add_argument("--skip-wait", action="store_true", help="Submit without waiting for Run All")

@@ -123,6 +123,15 @@ def main() -> None:
     phase4_eval.add_argument("--input-dir", default="data/transitions")
     phase4_eval.add_argument("--output", default="data/analysis/phase4/arc_semantics_eval.json")
 
+    goals = sub.add_parser("build-goal-hypotheses", help="Build Phase 5 goal hypotheses from transitions")
+    goals.add_argument("--transitions-dir", default="data/transitions")
+    goals.add_argument("--output-dir", default="data/goals/arc")
+    goals.add_argument("--arc-tasks-dir", default=None)
+
+    phase5_eval = sub.add_parser("eval-phase5-arc", help="Evaluate Phase 5 goal inference on transition logs")
+    phase5_eval.add_argument("--input-dir", default="data/transitions")
+    phase5_eval.add_argument("--output", default="data/analysis/phase5/arc_goals_eval.json")
+
     args = parser.parse_args()
 
     if args.command == "run-episode":
@@ -246,6 +255,29 @@ def main() -> None:
         import sys
 
         script = Path(__file__).resolve().parents[2] / "scripts" / "eval_phase4_arc_semantics.py"
+        cmd = [
+            sys.executable,
+            str(script),
+            "--input-dir",
+            args.input_dir,
+            "--output",
+            args.output,
+        ]
+        subprocess.run(cmd, cwd=script.parent.parent, check=True)
+    elif args.command == "build-goal-hypotheses":
+        from asra.goals import bootstrap_from_arc_tasks, build_goals_from_transitions
+
+        import json
+
+        result = build_goals_from_transitions(args.transitions_dir, args.output_dir)
+        if args.arc_tasks_dir:
+            result["arc_template_priors"] = len(bootstrap_from_arc_tasks(args.arc_tasks_dir))
+        print(json.dumps(result, indent=2))
+    elif args.command == "eval-phase5-arc":
+        import subprocess
+        import sys
+
+        script = Path(__file__).resolve().parents[2] / "scripts" / "eval_phase5_arc_goals.py"
         cmd = [
             sys.executable,
             str(script),
