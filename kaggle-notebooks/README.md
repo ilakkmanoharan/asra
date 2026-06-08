@@ -1,0 +1,39 @@
+# ASRA Kaggle notebooks (Phases 1–9)
+
+Competition lane for [ARC Prize 2026 — ARC-AGI-3](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3). Each phase has a dedicated folder with notebook, conceptual paper, submit CLI, and README.
+
+| Phase | Agent tag | Folder | Kernel |
+|-------|-----------|--------|--------|
+| 1 | `asra-v0.1-phase1` | [phase1/](phase1/) | [asra-phase-1-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026) |
+| 2 | `asra-v0.4-phase2` | [phase2/](phase2/) | [asra-phase-2-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-2-arc-prize-2026) |
+| 3 | `asra-v0.5-phase3` | [phase3/](phase3/) | [asra-phase-3-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-3-arc-prize-2026) |
+| 4 | `asra-v0.6-phase4` | [phase4/](phase4/) | [asra-phase-4-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-4-arc-prize-2026) |
+| 5 | `asra-v0.7-phase5` | [phase5/](phase5/) | [asra-phase-5-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-5-arc-prize-2026) |
+| 6 | `asra-v0.8-phase6` | [phase6/](phase6/) | [asra-phase-6-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-6-arc-prize-2026) |
+| 7 | `asra-v0.85-phase7` | [phase7/](phase7/) | [asra-phase-7-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-7-arc-prize-2026) |
+| 8 | `asra-v0.9-phase8` | [phase8/](phase8/) | [asra-phase-8-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-8-arc-prize-2026) |
+| 9 | `asra-v1.0-phase9` | [phase9/](phase9/) | [asra-phase-9-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-9-arc-prize-2026) |
+
+## Submit pattern
+
+```bash
+cd kaggle-notebooks/phaseN
+./submit.sh all "asra-vX-phaseN"
+```
+
+Uses `kagglesdk` + `~/.kaggle/access_token`. If `GetKernelSessionStatus` returns HTTP 500:
+
+```bash
+./submit.sh push
+sleep 900
+./submit.sh submit 1 "asra-vX-phaseN"
+```
+
+## SciLayer preprints
+
+https://sci-layer.vercel.app/articles — Phase 1–9 manuscripts + archived notebooks in [SciLayer/content/kaggle-notebooks](https://github.com/ilakkmanoharan/SciLayer/tree/main/content/kaggle-notebooks).
+
+## Legacy root notebooks
+
+- `asra-phase-1-arc-prize-2026-v4-fixed.ipynb` — superseded by `phase1/asra-phase-1-arc-prize-2026.ipynb`
+- `asra_v0_1_phase1_arc_agi3_notebook.ipynb`, `asra_v0_2_phase1_arc_agi3_notebook.ipynb` — early Phase 1 iterations
