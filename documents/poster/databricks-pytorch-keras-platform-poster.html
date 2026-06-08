@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Databricks Meets PyTorch to Databricks Meets Keras</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap");
+
+    :root {
+      --bg: #0c1118;
+      --panel: #141c27;
+      --panel2: #1a2433;
+      --text: #edf2f7;
+      --muted: #94a3b8;
+      --pytorch: #ee4c2c;
+      --keras: #d000ff;
+      --data: #3b82f6;
+      --accent: #22d3ee;
+      --gold: #fbbf24;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: #06080d;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .poster {
+      width: 1000px;
+      min-height: 1414px;
+      background:
+        radial-gradient(ellipse 70% 45% at 0% 0%, rgba(59,130,246,0.14), transparent 55%),
+        radial-gradient(ellipse 55% 40% at 100% 10%, rgba(238,76,44,0.12), transparent 50%),
+        radial-gradient(ellipse 50% 35% at 80% 90%, rgba(208,0,255,0.08), transparent 45%),
+        linear-gradient(180deg, #0c1118 0%, #101722 100%);
+      border: 1px solid var(--line);
+      padding: 44px 48px 40px;
+      display: grid;
+      gap: 22px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.5);
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 42px;
+      line-height: 1.05;
+      font-weight: 600;
+      max-width: 900px;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.45;
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    .formula-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .formula {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .formula.pytorch { border-color: rgba(238,76,44,0.35); color: #ffb4a2; }
+    .formula.keras { border-color: rgba(208,0,255,0.3); color: #e9b8ff; }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+
+    .card h2 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .card.pytorch h2 { color: var(--pytorch); }
+    .card.keras h2 { color: var(--keras); }
+    .card.data h2 { color: var(--data); }
+
+    .card p, .card li {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .card ul { margin: 8px 0 0 18px; }
+    .card li { margin-bottom: 4px; }
+
+    .tagline {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--panel2);
+      font-size: 12px;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    .flow {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+
+    .flow h3 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .step {
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .arrow { color: var(--accent); font-weight: 700; }
+
+    .compare {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      overflow: hidden;
+    }
+
+    .compare h3 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--panel2);
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    td { color: var(--muted); }
+    .col-pytorch { color: #ffb4a2; }
+    .col-keras { color: #e9b8ff; }
+
+    .asra-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+    }
+
+    .lanes {
+      display: grid;
+      gap: 8px;
+    }
+
+    .lane {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 10px;
+      align-items: start;
+      background: var(--panel2);
+      border-radius: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      font-size: 11px;
+    }
+
+    .lane b { color: var(--accent); font-size: 10px; letter-spacing: 0.06em; }
+    .lane span { color: var(--muted); line-height: 1.4; }
+
+    .maturity {
+      background: linear-gradient(135deg, rgba(34,211,238,0.08), rgba(251,191,36,0.06));
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .maturity strong { color: #fff; display: block; margin-bottom: 6px; }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: end;
+    }
+
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .link {
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #041016;
+      background: var(--accent);
+      padding: 7px 12px;
+      border-radius: 7px;
+    }
+
+    .link.secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(34,211,238,0.35);
+    }
+
+    .attrib {
+      text-align: right;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .attrib strong { color: #fff; display: block; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <div>
+      <div class="eyebrow">Technical essay v2.0 · AI platform patterns · ASRA case study</div>
+      <h1>From <span>Databricks Meets PyTorch</span><br />to <span>Databricks Meets Keras</span></h1>
+      <p class="subtitle">
+        Two architectural patterns for enterprise AI — research flexibility vs operational simplicity —
+        and how <strong style="color:#fff">ASRA</strong> implements both on the path to scientific intelligence.
+      </p>
+    </div>
+
+    <div class="formula-row">
+      <div class="formula pytorch">Databricks + PyTorch = Infrastructure + Research Flexibility</div>
+      <div class="formula keras">Databricks + Keras = Infrastructure + Simplicity</div>
+    </div>
+
+    <section class="columns">
+      <div class="card pytorch">
+        <h2>Databricks meets PyTorch</h2>
+        <p>Enterprise data/compute + maximum model development control.</p>
+        <ul>
+          <li>Lakehouse, Spark pipelines, features, MLOps</li>
+          <li>Custom architectures, RL, world models, LLMs</li>
+          <li>Frontier research — build anything</li>
+        </ul>
+        <div class="tagline">"Unify data and training in one environment."</div>
+      </div>
+      <div class="card keras">
+        <h2>Databricks meets Keras</h2>
+        <p>Same infrastructure + radical ease of use.</p>
+        <ul>
+          <li>Abstracted pipelines, tracking, deployment</li>
+          <li><code style="color:#e9b8ff">model.fit(data)</code> — complexity hidden</li>
+          <li>Domain experts focus on problems, not clusters</li>
+        </ul>
+        <div class="tagline">"A full AI factory that feels like a workbench."</div>
+      </div>
+    </section>
+
+    <section class="flow">
+      <h3>Unified platform flow (ASRA example)</h3>
+      <div class="flow-steps">
+        <span class="step">Environment</span><span class="arrow">→</span>
+        <span class="step">State transitions</span><span class="arrow">→</span>
+        <span class="step">Lakehouse storage</span><span class="arrow">→</span>
+        <span class="step">Distributed processing</span><span class="arrow">→</span>
+        <span class="step">PyTorch training</span><span class="arrow">→</span>
+        <span class="step">World model updates</span><span class="arrow">→</span>
+        <span class="step">Eval & deploy</span>
+      </div>
+    </section>
+
+    <section class="compare">
+      <h3>Who is the platform for?</h3>
+      <table>
+        <thead>
+          <tr><th>Aspect</th><th class="col-pytorch">+ PyTorch</th><th class="col-keras">+ Keras</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary user</td><td>ML researchers, engineers</td><td>Scientists, domain experts</td></tr>
+          <tr><td>Goal</td><td>Maximum flexibility</td><td>Maximum productivity</td></tr>
+          <tr><td>Learning curve</td><td>Steep</td><td>Easier</td></tr>
+          <tr><td>Novel architectures</td><td>Ideal</td><td>More constrained</td></tr>
+          <tr><td>Time to first model</td><td>Slower</td><td>Faster</td></tr>
+          <tr><td>World models</td><td>Ideal</td><td>Possible, less flexible</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="asra-grid">
+      <div class="card data">
+        <h2>ASRA dual-lane architecture</h2>
+        <div class="lanes">
+          <div class="lane"><b>Research</b><span>PyTorch-class · <code>asra-arc/src/asra/</code> · compose cognitive phases, invent mechanisms</span></div>
+          <div class="lane"><b>Delivery</b><span>Keras-class · <code>kaggle-notebooks/phase*/</code> · versioned agents, simple submit surface</span></div>
+          <div class="lane"><b>Science</b><span>Intelligence platform · Phases 4–8 + Decision Biology · hypothesize → experiment → refine</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:11px;color:var(--muted)">Don't collapse lanes too early — library needs competition validation; agents need library depth.</p>
+      </div>
+      <div class="maturity">
+        <strong>ASRA maturity path</strong>
+        ① Databricks + PyTorch — build the technology<br />
+        ② Databricks + Keras — make it accessible<br />
+        ③ Scientific Operating System — continuous discovery at scale
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div class="links">
+          <a class="link" href="https://github.com/ilakkmanoharan/asra/blob/main/documents/from_databricks_meets_pytorch_to_keras_whitepaper.md">White paper</a>
+          <a class="link secondary" href="https://sci-layer.vercel.app/articles/from-databricks-meets-pytorch-to-keras-ai-platform-evolution">SciLayer</a>
+          <a class="link secondary" href="https://github.com/ilakkmanoharan/asra">ASRA repo</a>
+        </div>
+      </div>
+      <div class="attrib">
+        <strong>Ilakkuvaselvi Manoharan</strong>
+        Nature Foundation Models<br />
+        June 2026 · v2.0 simplified essay
+      </div>
+    </footer>
+  </article>
+</body>
+</html>
