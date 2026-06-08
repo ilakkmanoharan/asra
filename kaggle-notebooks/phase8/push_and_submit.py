@@ -97,7 +97,7 @@ def submit(client: KaggleClient, version: int, message: str) -> int:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Push + submit ASRA Phase 8 Kaggle notebook")
-    p.add_argument("--message", default="ASRA v0.7-phase5 goal inference")
+    p.add_argument("--message", default="asra-v0.9-phase8")
     p.add_argument("--skip-push", action="store_true")
     p.add_argument("--skip-wait", action="store_true", help="Submit without waiting for Run All")
     p.add_argument("--version", type=int, default=0, help="Kernel version to submit (0 = pushed)")

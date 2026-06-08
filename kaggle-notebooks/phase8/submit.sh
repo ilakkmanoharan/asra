@@ -12,7 +12,7 @@ case "${1:-all}" in
     python3 push_and_submit.py --skip-push --skip-wait --version "${2:-1}"
     ;;
   all)
-    python3 push_and_submit.py --message "${2:-asra-v0.8-phase6"
+    python3 push_and_submit.py --message "${2:-asra-v0.9-phase8}"
     ;;
   *)
     echo "Usage: $0 {push|submit VERSION|all [message]}"
