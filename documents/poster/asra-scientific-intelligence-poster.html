@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASRA — Adaptive Scientific Reasoning Architecture</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+    :root {
+      --bg: #0a0f14;
+      --surface: #111922;
+      --surface2: #172230;
+      --text: #e8eef4;
+      --muted: #8fa3b8;
+      --accent: #3dd6c6;
+      --accent2: #6b8cff;
+      --accent3: #f0b429;
+      --line: rgba(255, 255, 255, 0.08);
+      --glow: rgba(61, 214, 198, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: #05080c;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .poster {
+      width: 1000px;
+      min-height: 1414px;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 0%, rgba(107, 140, 255, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 20%, rgba(61, 214, 198, 0.1), transparent 50%),
+        linear-gradient(165deg, #0a0f14 0%, #0d1520 45%, #0a1018 100%);
+      border: 1px solid var(--line);
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55);
+      padding: 48px 52px 44px;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-top: 10px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .badge {
+      background: var(--surface2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: right;
+      min-width: 210px;
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 13px;
+      color: var(--accent3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .badge span {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hero-quote {
+      background: linear-gradient(135deg, rgba(61, 214, 198, 0.08), rgba(107, 140, 255, 0.06));
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      font-size: 17px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-quote strong { color: #fff; }
+
+    .lanes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lane {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+
+    .lane h3 {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .lane.pyTorch h3 { color: var(--accent2); }
+    .lane.keras h3 { color: var(--accent); }
+
+    .lane p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .lane code {
+      font-size: 11px;
+      background: rgba(255,255,255,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #cbd5e1;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    .panel h2 {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent3);
+      margin-bottom: 14px;
+    }
+
+    .phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .phase {
+      background: var(--surface2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .phase b {
+      display: block;
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+
+    .loop {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .loop-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .loop-step .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 10px var(--glow);
+    }
+
+    .loop-step span { color: var(--text); font-weight: 600; min-width: 130px; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #cbd5e1;
+    }
+
+    .pill.highlight {
+      border-color: rgba(61, 214, 198, 0.35);
+      color: var(--accent);
+      background: rgba(61, 214, 198, 0.08);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 12px 8px;
+      background: var(--surface2);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .stat .num {
+      font-family: "Instrument Serif", serif;
+      font-size: 28px;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .stat .lbl {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .biology {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(240, 180, 41, 0.08), transparent);
+      border: 1px solid rgba(240, 180, 41, 0.2);
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .biology strong { color: var(--accent3); }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-block h4 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .cta.secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(61, 214, 198, 0.4);
+    }
+
+    .attribution {
+      text-align: right;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .attribution strong { color: #fff; display: block; font-size: 12px; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .poster { box-shadow: none; width: 100%; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <article class="poster" role="img" aria-label="ASRA advertising poster">
+    <div>
+      <div class="eyebrow">Scientific Intelligence Platform · ARC Prize 2026 · Decision Biology</div>
+      <header class="header">
+        <div>
+          <h1>ASRA<br /><em>Reasoning,</em> not memorization.</h1>
+          <p class="subtitle">
+            Adaptive Scientific Reasoning Architecture — a modular cognitive stack that spans
+            research-grade flexibility, competition-ready agents, and closed-loop scientific discovery.
+          </p>
+        </div>
+        <div class="badge">
+          <strong>Platform evolution</strong>
+          <span>PyTorch-class research<br />+ Keras-class deploy<br />→ Scientific OS</span>
+        </div>
+      </header>
+    </div>
+
+    <blockquote class="hero-quote">
+      Intelligence is not static prediction on fixed datasets.
+      <strong>ASRA behaves like a scientist</strong> — observing, hypothesizing, experimenting,
+      planning interventions, and refining world models under uncertainty.
+    </blockquote>
+
+    <section class="lanes" aria-label="Dual-lane architecture">
+      <div class="lane pyTorch">
+        <h3>Stage 1 · Research stack</h3>
+        <p>Maximum flexibility. Composable cognitive phases, CLI eval harnesses, explicit epistemic objects.</p>
+        <code>asra-arc/src/asra/</code>
+      </div>
+      <div class="lane keras">
+        <h3>Stage 2 · Competition lane</h3>
+        <p>Radical simplicity. Versioned Kaggle agents from <code>asra-v0.4</code> through <code>asra-v1.0</code>.</p>
+        <code>kaggle-notebooks/phase1–9</code>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      <div class="panel">
+        <h2>Nine-phase cognitive architecture</h2>
+        <div class="phases">
+          <div class="phase"><b>Phase 1</b>Experience · transitions · state graphs</div>
+          <div class="phase"><b>Phase 2</b>Observation · objects · rule hypotheses</div>
+          <div class="phase"><b>Phase 3</b>Memory · exploration · subgoals</div>
+          <div class="phase"><b>Phase 4</b>Causality · action semantics</div>
+          <div class="phase"><b>Phase 5</b>Goal inference · hypothesis ranking</div>
+          <div class="phase"><b>Phase 6</b>Planning · strategy invention</div>
+          <div class="phase"><b>Phase 7</b>Robustness · generalization</div>
+          <div class="phase"><b>Phase 8</b>Decision Biology bridge</div>
+          <div class="phase"><b>Phase 9</b>Final integration · research story</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="num">9</div><div class="lbl">Composable phases</div></div>
+          <div class="stat"><div class="num">2</div><div class="lbl">Parallel lanes<br />research + deploy</div></div>
+          <div class="stat"><div class="num">∞</div><div class="lbl">Unseen environments<br />ARC-AGI-3 stress test</div></div>
+        </div>
+        <div class="pill-row">
+          <span class="pill highlight">Hypotheses as data structures</span>
+          <span class="pill">Transition-centric memory</span>
+          <span class="pill">Plan repair + stuck detection</span>
+          <span class="pill">SciLayer preprints</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Scientific intelligence loop</h2>
+        <div class="loop">
+          <div class="loop-step"><div class="dot"></div><span>Question</span> Hidden objectives · ARC · biology</div>
+          <div class="loop-step"><div class="dot"></div><span>Experiment</span> Actions · perturbations</div>
+          <div class="loop-step"><div class="dot"></div><span>Observe</span> Transitions · assays</div>
+          <div class="loop-step"><div class="dot"></div><span>World model</span> State & pathway graphs</div>
+          <div class="loop-step"><div class="dot"></div><span>Hypothesize</span> Goals · rules · mechanisms</div>
+          <div class="loop-step"><div class="dot"></div><span>Plan</span> Multi-step interventions</div>
+          <div class="loop-step"><div class="dot"></div><span>Refine</span> Memory graph · abstractions</div>
+        </div>
+        <div class="biology">
+          <strong>Decision Biology</strong> — the same architecture that adapts in ARC games
+          reasons about cells: perturbations → actions, pathways → world models,
+          adaptation → sequential decision-making under uncertainty.
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="cta-block">
+        <h4>Explore ASRA</h4>
+        <div class="cta-links">
+          <a class="cta" href="https://github.com/ilakkmanoharan/asra">github.com/ilakkmanoharan/asra</a>
+          <a class="cta secondary" href="https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1">SciLayer preprints</a>
+          <a class="cta secondary" href="https://www.kaggle.com/code/ilakkmanoharan/asra-phase-7-arc-prize-2026">Kaggle Phase 7 agent</a>
+        </div>
+      </div>
+      <div class="attribution">
+        <strong>Ilakkuvaselvi Manoharan</strong>
+        Nature Foundation Models<br />
+        Based on: <em>From Databricks Meets PyTorch to Databricks Meets Keras</em><br />
+        Industry white paper · June 2026
+      </div>
+    </footer>
+  </article>
+</body>
+</html>
