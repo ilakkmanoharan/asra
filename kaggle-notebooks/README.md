@@ -42,7 +42,17 @@ See [`_shared/README.md`](_shared/README.md) for full tooling docs.
 
 ## SciLayer preprints
 
-https://sci-layer.vercel.app/articles — Phase 1–9 manuscripts + archived notebooks in [SciLayer/content/kaggle-notebooks](https://github.com/ilakkmanoharan/SciLayer/tree/main/content/kaggle-notebooks).
+https://sci-layer.vercel.app/articles — Phase 1–9 manuscripts + technical specs.
+
+| Spec | Local copy |
+|------|------------|
+| [Gateway deployment](https://sci-layer.vercel.app/articles/arc-agi-3-kaggle-gateway-deployment-spec) | [`documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md`](../documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md) |
+| [Repeated-run eval](https://sci-layer.vercel.app/articles/asra-repeated-run-eval-arc-agi-3) | [`documents/specs/asra-repeated-run-eval-arc-agi-3.md`](../documents/specs/asra-repeated-run-eval-arc-agi-3.md) |
+| [Integrated architecture](https://sci-layer.vercel.app/articles/asra-integrated-architecture) | [`documents/architecture/asra-integrated-architecture.md`](../documents/architecture/asra-integrated-architecture.md) |
+| [Evaluation Report v0](https://sci-layer.vercel.app/articles/asra-arc-agi-3-evaluation-report-v0) | [`documents/evaluation/asra-arc-agi-3-evaluation-report-v0.md`](../documents/evaluation/asra-arc-agi-3-evaluation-report-v0.md) |
+| [Phase 2 ARC results](https://sci-layer.vercel.app/articles/asra-phase-2-original-arc-evaluation-results) | [`documents/evaluation/asra-phase-2-original-arc-evaluation-results.md`](../documents/evaluation/asra-phase-2-original-arc-evaluation-results.md) |
+
+Archived notebooks: [SciLayer/content/kaggle-notebooks](https://github.com/ilakkmanoharan/SciLayer/tree/main/content/kaggle-notebooks).
 
 ## Legacy root notebooks
 

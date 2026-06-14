@@ -245,7 +245,7 @@ Defined in `asra-arc/src/asra/memory/transition_schema.py`:
 | `submission.parquet` | Scoring rerun | Gateway-produced real scores |
 | `/tmp/my_agent.py` | Notebook | Template agent (not in working output) |
 
-Gateway pattern: see `kaggle-notebooks/_shared/gateway_notebook.py` and `private/error/kaggle-error/success.md`.
+Gateway pattern: see [`documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md`](../specs/arc-agi-3-kaggle-gateway-deployment-spec.md) and `kaggle-notebooks/_shared/gateway_notebook.py`.
 
 ---
 
@@ -265,8 +265,13 @@ Gateway pattern: see `kaggle-notebooks/_shared/gateway_notebook.py` and `private
 | 7 — Robustness | [Robustness (Phase 7)](https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7) |
 | 8 — Biology | [Decision Biology Bridge (Phase 8)](https://sci-layer.vercel.app/articles/decision-biology-bridge-asra-phase-8) |
 | 9 — Integration | [Final Research Story (Phase 9)](https://sci-layer.vercel.app/articles/final-submission-research-story-asra-phase-9) |
+| — Gateway | [ARC-AGI-3 Kaggle Gateway Deployment Spec](https://sci-layer.vercel.app/articles/arc-agi-3-kaggle-gateway-deployment-spec) |
+| — Repeated-run eval | [Repeated-Run Learning Eval Protocol](https://sci-layer.vercel.app/articles/asra-repeated-run-eval-arc-agi-3) |
+| — Eval Report v0 | [ASRA Evaluation Report v0](https://sci-layer.vercel.app/articles/asra-arc-agi-3-evaluation-report-v0) |
+| — Phase 2 ARC results | [Phase 2 Original ARC Evaluation Results](https://sci-layer.vercel.app/articles/asra-phase-2-original-arc-evaluation-results) |
+| — Integrated arch | [ASRA Integrated Architecture](https://sci-layer.vercel.app/articles/asra-integrated-architecture) |
 
-**Local companions (same manuscripts):** `kaggle-notebooks/phaseN/asra-phaseN-*.md`
+**Local companions (same manuscripts):** `kaggle-notebooks/phaseN/asra-phaseN-*.md`, `documents/specs/*.md`, `documents/evaluation/*.md`, `documents/architecture/asra-integrated-architecture.md`
 
 ---
 
@@ -291,6 +296,7 @@ Phase N Kaggle agents **embed** a subset of Phase 1…N logic (no full `asra-arc
 | `asra-arc/data/` | Runtime logs, graphs, exports |
 | `kaggle-notebooks/phase1…9/` | Per-phase agent, notebook, conceptual paper |
 | `kaggle-notebooks/_shared/` | Gateway notebook tooling |
+| `documents/specs/` | Gateway deployment spec, repeated-run eval protocol |
 | `documents/architecture/asra-integrated-architecture.md` | **This document** |
 | GitHub | https://github.com/ilakkmanoharan/asra |
 
@@ -300,9 +306,10 @@ Phase N Kaggle agents **embed** a subset of Phase 1…N logic (no full `asra-arc
 
 | Topic | Status |
 |-------|--------|
-| Greg-style repeated-run eval (setup #1/#2, ls20/bp35) | Described in X thread; not formalized here |
-| Cross-run persistence protocol | Partially in Phase 3 replay; eval spec TBD |
-| Unified eval report + architecture SVG | Phase 9 narrative deliverables (pending) |
+| Greg-style repeated-run eval (setup #1/#2, ls20/bp35) | **Spec published** — [`documents/specs/asra-repeated-run-eval-arc-agi-3.md`](../specs/asra-repeated-run-eval-arc-agi-3.md) |
+| Cross-run persistence protocol | Covered in repeated-run eval spec §6 |
+| Kaggle gateway deployment | **Spec published** — [`documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md`](../specs/arc-agi-3-kaggle-gateway-deployment-spec.md) |
+| Unified eval report + architecture SVG | **Eval Report v0 published** — [`documents/evaluation/asra-arc-agi-3-evaluation-report-v0.md`](../evaluation/asra-arc-agi-3-evaluation-report-v0.md); v1 + SVG pending |
 
 ---
 

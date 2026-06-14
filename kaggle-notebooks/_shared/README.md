@@ -1,6 +1,6 @@
 # Kaggle gateway shared tooling (Stage 0)
 
-Official [ARC-AGI-3 Kaggle Starter](https://github.com/arcprize/ARC-AGI-3-Kaggle-Starter) pattern — required for scoring. See `private/error/kaggle-error/success.md`.
+Official [ARC-AGI-3 Kaggle Starter](https://github.com/arcprize/ARC-AGI-3-Kaggle-Starter) pattern — required for scoring. Full spec: [`documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md`](../../documents/specs/arc-agi-3-kaggle-gateway-deployment-spec.md).
 
 ## When to submit to Kaggle
 
