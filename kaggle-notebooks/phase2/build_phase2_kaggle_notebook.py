@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Kaggle Phase 5 notebook (delegates to _shared gateway builder)."""
+"""Build Kaggle Phase 2 notebook (delegates to _shared gateway builder)."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from phase_registry import get_phase
 
 
 def main() -> None:
-    out = build_and_write(get_phase(5))
+    out = build_and_write(get_phase(2))
     print(f"Wrote {out} ({out.stat().st_size} bytes)")
 
 

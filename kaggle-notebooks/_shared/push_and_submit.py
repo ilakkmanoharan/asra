@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Push Phase 1 notebook to Kaggle (Run All) and submit to ARC-AGI-3."""
+"""Push gateway notebook to Kaggle (Run All) and submit to ARC-AGI-3."""
 
 from __future__ import annotations
 
@@ -18,10 +18,8 @@ from kagglesdk.kernels.types.kernels_api_service import (
 )
 from kagglesdk.kernels.types.kernels_enums import KernelExecutionType, KernelWorkerStatus
 
-HERE = Path(__file__).resolve().parent
-KERNEL_SLUG = "ilakkmanoharan/asra-phase-1-arc-prize-2026"
-COMP = "arc-prize-2026-arc-agi-3"
-NOTEBOOK = HERE / "asra-phase-1-arc-prize-2026.ipynb"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from phase_registry import COMP, PHASES, PhaseConfig
 
 
 def _token() -> str:
@@ -33,12 +31,14 @@ def _token() -> str:
     sys.exit("Set KAGGLE_API_TOKEN or ~/.kaggle/access_token")
 
 
-def push(client: KaggleClient) -> int:
-    text = NOTEBOOK.read_text(encoding="utf-8")
+def push(client: KaggleClient, phase: PhaseConfig) -> int:
+    notebook = phase.notebook_path
+    if not notebook.is_file():
+        raise FileNotFoundError(f"Notebook not found: {notebook}")
     req = ApiSaveKernelRequest()
-    req.slug = KERNEL_SLUG
-    req.new_title = "ASRA Phase 1 — ARC Prize 2026"
-    req.text = text
+    req.slug = phase.kernel_slug
+    req.new_title = phase.title
+    req.text = notebook.read_text(encoding="utf-8")
     req.language = "python"
     req.kernel_type = "notebook"
     req.competition_data_sources = [COMP]
@@ -53,8 +53,8 @@ def push(client: KaggleClient) -> int:
     return int(resp.version_number or 1)
 
 
-def wait_for_run(client: KaggleClient, timeout_s: int = 900) -> None:
-    owner, slug = KERNEL_SLUG.split("/", 1)
+def wait_for_run(client: KaggleClient, phase: PhaseConfig, timeout_s: int = 900) -> None:
+    owner, slug = phase.kernel_slug.split("/", 1)
     deadline = time.time() + timeout_s
     while time.time() < deadline:
         try:
@@ -72,8 +72,8 @@ def wait_for_run(client: KaggleClient, timeout_s: int = 900) -> None:
                 has_sub = any(n == "submission.parquet" or n.endswith("/submission.parquet") for n in names)
                 print(f"Outputs: submission.parquet={has_sub} (listed {len(names)} files)")
                 if not has_sub:
-                    top = sorted(n for n in names if not n.startswith("asra_venv"))[:30]
-                    raise RuntimeError(f"Missing outputs. Sample: {top}")
+                    top = sorted(names)[:30]
+                    raise RuntimeError(f"Missing submission.parquet. Sample outputs: {top}")
                 return
             if st.status == KernelWorkerStatus.ERROR:
                 raise RuntimeError(f"Kernel run failed: {st.failure_message}")
@@ -83,8 +83,8 @@ def wait_for_run(client: KaggleClient, timeout_s: int = 900) -> None:
     raise TimeoutError(f"Kernel did not complete within {timeout_s}s")
 
 
-def submit(client: KaggleClient, version: int, message: str) -> int:
-    owner, slug = KERNEL_SLUG.split("/", 1)
+def submit(client: KaggleClient, phase: PhaseConfig, version: int, message: str) -> int:
+    owner, slug = phase.kernel_slug.split("/", 1)
     req = ApiCreateCodeSubmissionRequest()
     req.competition_name = COMP
     req.file_name = "submission.parquet"
@@ -93,35 +93,38 @@ def submit(client: KaggleClient, version: int, message: str) -> int:
     req.kernel_version = version
     req.submission_description = message
     resp = client.competitions.competition_api_client.create_code_submission(req)
+    if resp.error:
+        raise RuntimeError(resp.error)
     print(f"Submitted ref={resp.ref} message={resp.message!r}")
     return int(resp.ref)
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Push + submit ASRA Phase 1 Kaggle notebook")
-    p.add_argument("--message", default="asra-v0.1-phase1")
+    p = argparse.ArgumentParser(description="Push + submit ASRA Kaggle gateway notebook")
+    p.add_argument("--phase", type=int, required=True, choices=sorted(PHASES))
+    p.add_argument("--message", default="")
     p.add_argument("--skip-push", action="store_true")
-    p.add_argument("--skip-wait", action="store_true", help="Submit without waiting for Run All")
-    p.add_argument("--version", type=int, default=0, help="Kernel version to submit (0 = pushed)")
-    p.add_argument("--push-only", action="store_true", help="Push and wait only; do not submit")
+    p.add_argument("--skip-wait", action="store_true")
+    p.add_argument("--version", type=int, default=0)
+    p.add_argument("--push-only", action="store_true")
     args = p.parse_args()
 
-    if not NOTEBOOK.is_file():
-        sys.exit(f"Notebook not found: {NOTEBOOK}")
+    phase = PHASES[args.phase]
+    message = args.message or f"{phase.agent_tag} v3 official gateway pattern"
 
     client = KaggleClient(api_token=_token())
     with client:
         version = args.version
         if not args.skip_push:
-            version = push(client)
+            version = push(client, phase)
         if version <= 0:
             version = 1
         if not args.skip_wait:
-            wait_for_run(client)
+            wait_for_run(client, phase)
         if args.push_only:
-            print(f"Push complete. Submit manually with version={version}")
+            print(f"Push complete. Submit with: --skip-push --skip-wait --version {version} --message {message!r}")
             return
-        submit(client, version, args.message)
+        submit(client, phase, version, message)
 
 
 if __name__ == "__main__":

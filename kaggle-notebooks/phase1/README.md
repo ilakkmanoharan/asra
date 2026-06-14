@@ -65,10 +65,16 @@ https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra
 
 ## Last successful submit (parity)
 
-- **Version:** 1  
+- **Version:** 2 (v2 gate fix — 2026-06-10)  
+- **Ref:** 53600233  
+- **Message:** `asra-v0.1-phase1 v2 - /tmp venv wheels-only gate fix`  
+- **Kernel:** https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026  
+- **Fix notes:** `private/error/kaggle-error/arc-resolution.md`
+
+### v1 (failed — Kaggle Error)
+
 - **Ref:** 53474494  
-- **Message:** `asra-v0.1-phase1`  
-- **Kernel:** https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026
+- **Issue:** Full competition tree mirror + venv in `/kaggle/working/asra_venv`
 
 ## Prior submissions (historical)
 

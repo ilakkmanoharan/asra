@@ -14,20 +14,31 @@ Competition lane for [ARC Prize 2026 — ARC-AGI-3](https://www.kaggle.com/compe
 | 8 | `asra-v0.9-phase8` | [phase8/](phase8/) | [asra-phase-8-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-8-arc-prize-2026) |
 | 9 | `asra-v1.0-phase9` | [phase9/](phase9/) | [asra-phase-9-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-9-arc-prize-2026) |
 
-## Submit pattern
+## Submit pattern (Stage 1+)
+
+**Stage 0 does not submit** — it only extracts template agents and rebuilds notebooks locally.
 
 ```bash
+# Stage 0 — local only
+./kaggle-notebooks/_shared/stage0_setup.sh
+
+# Stage 1+ — push + submit (gateway pattern required)
 cd kaggle-notebooks/phaseN
-./submit.sh all "asra-vX-phaseN"
+./submit.sh all "asra-vX-phaseN v3 official gateway pattern"
+
+# Or from anywhere:
+python3 kaggle-notebooks/_shared/push_and_submit.py --phase N
 ```
 
-Uses `kagglesdk` + `~/.kaggle/access_token`. If `GetKernelSessionStatus` returns HTTP 500:
+If `GetKernelSessionStatus` returns HTTP 500:
 
 ```bash
 ./submit.sh push
 sleep 900
-./submit.sh submit 1 "asra-vX-phaseN"
+./submit.sh submit VERSION "asra-vX-phaseN v3 official gateway pattern"
 ```
+
+See [`_shared/README.md`](_shared/README.md) for full tooling docs.
 
 ## SciLayer preprints
 
