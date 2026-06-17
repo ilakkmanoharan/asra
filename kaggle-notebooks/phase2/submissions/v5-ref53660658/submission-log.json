@@ -1,0 +1,27 @@
+{
+  "phase": 2,
+  "agent_tag": "asra-v0.4-phase2",
+  "kernel_slug": "ilakkmanoharan/asra-phase-2-arc-prize-2026",
+  "kernel_version": 5,
+  "submission_ref": 53660658,
+  "submitted_at_utc": "2026-06-14 05:30:52.557000",
+  "message": "asra-v0.4-phase2 v3 official gateway pattern",
+  "status": "SubmissionStatus.COMPLETE",
+  "public_score": "0.00",
+  "file_name": "submission.parquet",
+  "submitted_by": "ilakkmanoharan",
+  "team_name": "Ilakk manoharan",
+  "validation_run": {
+    "session_status": "KernelWorkerStatus.COMPLETE",
+    "failure_message": "",
+    "session_outputs": ["submission.parquet"]
+  },
+  "prior_same_day": {
+    "phase": 3,
+    "action": "push_only",
+    "note": "Phase 3 kernel v2 Run All COMPLETE; submit blocked — daily quota consumed by this submit"
+  },
+  "stage": "Stage 1 — gateway migration",
+  "track_a_plumbing": "SUCCESS",
+  "track_b_score": "0.00 — object-scene hints did not raise public score vs Phase 1"
+}

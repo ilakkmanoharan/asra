@@ -1,0 +1,18 @@
+{
+  "phase": 4,
+  "agent_tag": "asra-v0.6-phase4",
+  "kernel_slug": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
+  "kernel_version": 4,
+  "submission_ref": 53760137,
+  "submitted_at_utc": "2026-06-17T02:16:51.277000+00:00",
+  "message": "asra-v0.6-phase4 v4 fix missing CausalSemanticsEngine",
+  "status": "COMPLETE",
+  "public_score": 0.0,
+  "validation_run": {
+    "session_status": "KernelWorkerStatus.COMPLETE",
+    "session_outputs": ["submission.parquet"]
+  },
+  "fix": "Embedded CausalSemanticsEngine + arcengine imports; extract_template_agent.py patched",
+  "prior_failed_ref": 53755707,
+  "archive_path": "kaggle-notebooks/phase4/submissions/v4-ref53760137"
+}

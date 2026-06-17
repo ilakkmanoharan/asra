@@ -2,6 +2,8 @@
 
 Competition lane for [ARC Prize 2026 — ARC-AGI-3](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3). Each phase has a dedicated folder with notebook, conceptual paper, submit CLI, and README.
 
+**Submission archive:** [`SUBMISSIONS.md`](SUBMISSIONS.md) — per-ref snapshots under `phaseN/submissions/` (created **only after** each competition submit).
+
 | Phase | Agent tag | Folder | Kernel |
 |-------|-----------|--------|--------|
 | 1 | `asra-v0.1-phase1` | [phase1/](phase1/) | [asra-phase-1-arc-prize-2026](https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026) |

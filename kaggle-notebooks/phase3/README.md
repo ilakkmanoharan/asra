@@ -17,6 +17,10 @@
 | **[asra-phase-3-arc-prize-2026.ipynb](asra-phase-3-arc-prize-2026.ipynb)** | **Kaggle submission notebook** |
 | Phase 2 (complete) | [`../phase2/asra-phase2-object-centric-reasoning.md`](../phase2/asra-phase2-object-centric-reasoning.md) |
 
+## Submissions
+
+Archive after each competition submit: [`submissions/`](submissions/) (v2 ref **53720818**, score **0.00**).
+
 ---
 
 ## Kaggle submission (ARC Prize 2026)

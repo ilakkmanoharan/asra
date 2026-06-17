@@ -15,6 +15,15 @@
 | **[phase4-implementation.md](phase4-implementation.md)** | Implementation reference (modules, CLI, Kaggle) |
 | **[asra-phase4-action-semantics-causal-inference.md](asra-phase4-action-semantics-causal-inference.md)** | **Conceptual article** (companion to Kaggle notebook) |
 
+## Submissions
+
+Archive after each competition submit: [`submissions/`](submissions/)
+
+| Ver | Ref | Score | Status |
+|-----|-----|-------|--------|
+| v3 | 53755707 | — | ERROR (missing `CausalSemanticsEngine`) |
+| v4 | 53760137 | **0.00** | **Succeeded** |
+
 ---
 
 ## Kaggle submission

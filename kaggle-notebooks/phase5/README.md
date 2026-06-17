@@ -1,5 +1,7 @@
 # Phase 5 — Goal Inference and Hypothesis Engine
 
+**Submissions:** [`submissions/`](submissions/) — *none yet* (archive after first submit).
+
 **Timeline:** August 2026  
 **Status:** **SPEC COMPLETE** — Kaggle agent + notebook in this folder; library `goals/` planned in `asra-arc/`  
 **Agent tag:** `asra-v0.7-phase5`  

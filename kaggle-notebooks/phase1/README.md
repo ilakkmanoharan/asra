@@ -12,6 +12,17 @@
 
 **Kernel:** https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026
 
+## Submissions (archive after each submit)
+
+Immutable snapshots per competition ref: [`submissions/`](submissions/)  
+Index: [`../SUBMISSIONS.md`](../SUBMISSIONS.md)
+
+| Ver | Ref | Score | Status |
+|-----|-----|-------|--------|
+| v3 | 53652655 | **0.03** | COMPLETE |
+
+Working notebook (`asra-phase-1-arc-prize-2026.ipynb`) is the live edit target; `submissions/` freezes what was actually pushed.
+
 ---
 
 ## Submit via CLI (kagglesdk + access token)
@@ -84,3 +95,13 @@ https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra
 | 53226645 | ASRA v11.4 competition venv |
 
 Canonical phase-numbered kernel supersedes these for roadmap parity.
+
+---
+
+## Submissions
+
+See [`submissions/`](submissions/) — gateway v3 ref **53652655**, score **0.03**. Archive new submits with:
+
+```bash
+python3 ../_shared/archive_submission.py --phase 1 --version N --ref REF --message "..."
+```

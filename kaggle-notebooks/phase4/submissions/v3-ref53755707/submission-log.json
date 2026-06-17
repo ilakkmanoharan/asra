@@ -1,0 +1,16 @@
+{
+  "phase": 4,
+  "agent_tag": "asra-v0.6-phase4",
+  "kernel_slug": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
+  "kernel_version": 3,
+  "submission_ref": 53755707,
+  "submitted_at_utc": "2026-06-16 22:19:42.407000",
+  "message": "asra-v0.6-phase4 v3 official gateway pattern",
+  "status": "ERROR",
+  "public_score": null,
+  "validation_run": {
+    "session_status": "KernelWorkerStatus.COMPLETE",
+    "session_outputs": ["submission.parquet"]
+  },
+  "stage": "Stage 1 — gateway migration"
+}

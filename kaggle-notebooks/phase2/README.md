@@ -9,7 +9,11 @@
 **Kernel:** https://www.kaggle.com/code/ilakkmanoharan/asra-phase-2-arc-prize-2026  
 **Competition:** `arc-prize-2026-arc-agi-3`
 
-## Submit via CLI (kagglesdk + access token)
+## Submissions
+
+Archive after each competition submit: [`submissions/`](submissions/) (v5 ref **53660658**, score **0.00**).
+
+--- (kagglesdk + access token)
 
 Uses `~/.kaggle/access_token` (KGAT), same as Phase 1 v11-4.
 

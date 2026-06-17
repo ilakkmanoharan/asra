@@ -2,6 +2,8 @@
 
 **Agent tag:** `asra-v0.8-phase6`
 
+**Submissions:** [`submissions/`](submissions/) — *none yet*.
+
 | Document | Role |
 |----------|------|
 | phase6-*.md | Specification |

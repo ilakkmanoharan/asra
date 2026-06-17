@@ -1,0 +1,22 @@
+{
+  "phase": 1,
+  "agent_tag": "asra-v0.1-phase1",
+  "kernel_slug": "ilakkmanoharan/asra-phase-1-arc-prize-2026",
+  "kernel_version": 3,
+  "submission_ref": 53652655,
+  "submitted_at_utc": "2026-06-13 23:05:28.850000",
+  "message": "asra-v0.1-phase1 v3 official gateway pattern",
+  "status": "SubmissionStatus.COMPLETE",
+  "public_score": "0.03",
+  "file_name": "submission.parquet",
+  "submitted_by": "ilakkmanoharan",
+  "team_name": "Ilakk manoharan",
+  "validation_run": {
+    "session_status": "KernelWorkerStatus.COMPLETE",
+    "failure_message": "",
+    "session_outputs": ["submission.parquet"]
+  },
+  "stage": "Stage 1 — gateway migration",
+  "track_a_plumbing": "SUCCESS — first non-ERROR ARC-AGI-3 submit",
+  "track_b_score": "0.03 — baseline Experience Engine"
+}

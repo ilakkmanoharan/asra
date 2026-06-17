@@ -28,6 +28,10 @@ python3 kaggle-notebooks/_shared/build_phase_notebook.py --all
 python3 kaggle-notebooks/_shared/push_and_submit.py --phase 3
 python3 kaggle-notebooks/_shared/push_and_submit.py --phase 3 --push-only
 python3 kaggle-notebooks/_shared/push_and_submit.py --phase 3 --skip-push --skip-wait --version 2 --message "asra-v0.5-phase3 v3 official gateway pattern"
+
+# After submit — archive snapshot (ref required)
+python3 kaggle-notebooks/_shared/archive_submission.py --phase 3 --version 2 --ref 53720818 --message "..."
+python3 kaggle-notebooks/_shared/archive_submission.py --phase 3 --version 2 --ref 53720818 --update-status COMPLETE --update-score 0.00
 ```
 
 ## Files
