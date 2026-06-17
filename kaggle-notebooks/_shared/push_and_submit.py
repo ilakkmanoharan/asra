@@ -93,10 +93,14 @@ def submit(client: KaggleClient, phase: PhaseConfig, version: int, message: str)
     req.kernel_version = version
     req.submission_description = message
     resp = client.competitions.competition_api_client.create_code_submission(req)
-    if resp.error:
-        raise RuntimeError(resp.error)
-    print(f"Submitted ref={resp.ref} message={resp.message!r}")
-    return int(resp.ref)
+    err = getattr(resp, "error", None)
+    if err:
+        raise RuntimeError(err)
+    ref = getattr(resp, "ref", None)
+    if ref is None:
+        raise RuntimeError(f"Unexpected submit response: {resp!r}")
+    print(f"Submitted ref={ref} message={getattr(resp, 'message', message)!r}")
+    return int(ref)
 
 
 def main() -> None:

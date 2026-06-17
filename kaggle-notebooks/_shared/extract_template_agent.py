@@ -66,15 +66,48 @@ def _clean_agent_lines(lines: list[str]) -> list[str]:
     return out
 
 
+def _find_agents_root_line(lines: list[str]) -> int:
+    for i, line in enumerate(lines):
+        if line.startswith("AGENTS_ROOT = _bootstrap_kaggle()"):
+            return i
+    raise ValueError("Could not find AGENTS_ROOT = _bootstrap_kaggle()")
+
+
+def _extract_class_blocks(lines: list[str], start: int, end: int) -> list[str]:
+    """Top-level class defs between bootstrap and AGENTS_ROOT (e.g. CausalSemanticsEngine)."""
+    out: list[str] = []
+    i = start
+    while i < end:
+        if lines[i].startswith("class "):
+            if out:
+                out.append("\n")
+            while i < end:
+                line = lines[i]
+                if (
+                    out
+                    and line
+                    and not line[0].isspace()
+                    and not line.startswith("class ")
+                ):
+                    break
+                out.append(line)
+                i += 1
+            continue
+        i += 1
+    return out
+
+
 def extract_template(source: str, phase: PhaseConfig) -> str:
     lines = source.splitlines(keepends=True)
     bootstrap_start = _find_bootstrap_start(lines)
+    agents_root_line = _find_agents_root_line(lines)
     runtime_start = _find_runtime_start(lines)
     agent_end = _find_agent_end(lines, runtime_start)
 
     pre = lines[:bootstrap_start]
+    embedded = _extract_class_blocks(lines, bootstrap_start, agents_root_line)
     agent = _clean_agent_lines(lines[runtime_start:agent_end])
-    body = "".join(pre) + "".join(agent)
+    body = "".join(pre) + "".join(embedded) + "".join(agent)
     body = body.replace("class ASRAAgent(Agent):", "class MyAgent(Agent):")
     body = re.sub(
         r'^"""[\s\S]*?"""',
@@ -89,6 +122,8 @@ def extract_template(source: str, phase: PhaseConfig) -> str:
         anchor = "from arcengine import"
         if anchor in body:
             body = body.replace(anchor, "from agents.agent import Agent\n" + anchor, 1)
+        elif "import numpy as np" in body:
+            body = body.replace("import numpy as np\n", "import numpy as np\nfrom agents.agent import Agent\n", 1)
         else:
             body = "from agents.agent import Agent\n" + body
 

@@ -1,4 +1,3 @@
-from agents.agent import Agent
 """ASRA Phase 4 agent — Kaggle template form (auto-extracted).
 
 Spliced into submission notebook. Must expose class MyAgent.
@@ -157,6 +156,118 @@ def transform_histogram_from_scenes(before: Dict[str, Any], after: Dict[str, Any
     if not hist and before.get("num_objects") == after.get("num_objects"):
         hist["identity"] = 1
     return dict(hist)
+
+
+# --- Phase 4 causal semantics (embedded) ---
+
+
+class CausalSemanticsEngine:
+    """Effect signatures, prediction, uncertainty, counterfactual."""
+
+    def __init__(self) -> None:
+        self.effects: Dict[Tuple[str, str], List[Dict[str, Any]]] = defaultdict(list)
+        self.successors: Dict[Tuple[str, str], Counter] = defaultdict(Counter)
+
+    def observe(
+        self,
+        state_hash_value: str,
+        action: str,
+        diff: Dict[str, Any],
+        reward: float,
+        *,
+        next_hash: Optional[str] = None,
+    ) -> None:
+        self.effects[(state_hash_value, action)].append(
+            {
+                "num_changed_cells": diff.get("num_changed_cells"),
+                "reward": reward,
+                "delta_num_objects": diff.get("delta_num_objects"),
+                "transform_histogram": dict(diff.get("transform_histogram") or {}),
+                "next_hash": next_hash,
+            }
+        )
+        if next_hash:
+            self.successors[(state_hash_value, action)][next_hash] += 1
+
+    def _label(self, mean: float, obj_mean: float, hist: Dict[str, int]) -> str:
+        if mean == 0 and obj_mean == 0:
+            return "no_op"
+        top = max(hist, key=hist.get) if hist else None
+        if top == "translate":
+            return "translate"
+        if top == "recolor":
+            return "recolor"
+        if top == "create":
+            return "create_object"
+        if top == "delete":
+            return "delete_object"
+        if mean <= 1.5:
+            return "localized_transform"
+        if obj_mean != 0:
+            return "object_count_change"
+        return "multi_cell_transform"
+
+    def infer(self, state_hash_value: str, action: str) -> Dict[str, Any]:
+        effects = self.effects.get((state_hash_value, action), [])
+        if not effects:
+            return {
+                "observations": 0,
+                "semantic_label": "unknown",
+                "hypothesis": "unknown",
+                "consistency_score": None,
+                "confidence": 0.0,
+                "uncertainty": 1.0,
+                "predicted_changed_cells": 0.0,
+            }
+        counts = [float(e["num_changed_cells"]) for e in effects if e["num_changed_cells"] is not None]
+        obj_deltas = [float(e.get("delta_num_objects") or 0) for e in effects]
+        std = float(np.std(counts)) if counts else 0.0
+        mean = float(np.mean(counts)) if counts else 0.0
+        obj_mean = float(np.mean(obj_deltas)) if obj_deltas else 0.0
+        hist: Counter = Counter()
+        for e in effects:
+            hist.update(e.get("transform_histogram") or {})
+        label = self._label(mean, obj_mean, dict(hist))
+        consistency = float(1.0 / (1.0 + std)) if counts else 0.0
+        n = len(effects)
+        confidence = min(1.0, (n / 5.0) * 0.6 + consistency * 0.4)
+        uncertainty = min(1.0, (1.0 / (1.0 + n) ** 0.5) + 0.15 * min(1.0, std / max(1.0, mean + 1.0)))
+        return {
+            "observations": n,
+            "semantic_label": label,
+            "hypothesis": label,
+            "consistency_score": consistency,
+            "confidence": confidence,
+            "uncertainty": uncertainty,
+            "mean_delta_objects": obj_mean,
+            "transform_histogram": dict(hist),
+            "predicted_changed_cells": mean,
+        }
+
+    def predict_next(self, state_hash_value: str, action: str) -> Dict[str, Any]:
+        counts = self.successors.get((state_hash_value, action))
+        if not counts:
+            return {"next_hash": None, "probability": 0.0}
+        total = sum(counts.values())
+        next_hash, top = counts.most_common(1)[0]
+        return {"next_hash": next_hash, "probability": top / total}
+
+    def counterfactual(self, state_hash_value: str, actual_action: str, alt_action: str) -> Dict[str, Any]:
+        sem = self.infer(state_hash_value, alt_action)
+        pred = self.predict_next(state_hash_value, alt_action)
+        return {
+            "actual_action": actual_action,
+            "alt_action": alt_action,
+            "predicted_changed_cells": sem.get("predicted_changed_cells", 0.0),
+            "semantic_label": sem.get("semantic_label", "unknown"),
+            "confidence": sem.get("confidence", 0.0),
+            "next_hash": pred.get("next_hash"),
+            "probability": pred.get("probability", 0.0),
+        }
+
+
+from agents.agent import Agent
+from arcengine import FrameData, GameAction, GameState
 
 
 SEED = int(os.environ.get("ASRA_SEED", "42"))

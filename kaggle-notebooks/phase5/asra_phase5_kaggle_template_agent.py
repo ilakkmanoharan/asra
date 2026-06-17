@@ -1,4 +1,3 @@
-from agents.agent import Agent
 """ASRA Phase 5 agent — Kaggle template form (auto-extracted).
 
 Spliced into submission notebook. Must expose class MyAgent.
@@ -14,6 +13,7 @@ from collections import Counter, defaultdict, deque
 from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
+from agents.agent import Agent
 
 # --- Phase 3 compact exploration hints (embedded) ---
 
@@ -157,6 +157,213 @@ def transform_histogram_from_scenes(before: Dict[str, Any], after: Dict[str, Any
     if not hist and before.get("num_objects") == after.get("num_objects"):
         hist["identity"] = 1
     return dict(hist)
+
+
+class CausalSemanticsEngine:
+    """Phase 4 embedded: effect signatures, prediction, uncertainty, counterfactual."""
+
+    def __init__(self) -> None:
+        self.effects: Dict[Tuple[str, str], List[Dict[str, Any]]] = defaultdict(list)
+        self.successors: Dict[Tuple[str, str], Counter] = defaultdict(Counter)
+
+    def observe(
+        self,
+        state_hash_value: str,
+        action: str,
+        diff: Dict[str, Any],
+        reward: float,
+        *,
+        next_hash: Optional[str] = None,
+    ) -> None:
+        self.effects[(state_hash_value, action)].append(
+            {
+                "num_changed_cells": diff.get("num_changed_cells"),
+                "reward": reward,
+                "delta_num_objects": diff.get("delta_num_objects"),
+                "transform_histogram": dict(diff.get("transform_histogram") or {}),
+                "next_hash": next_hash,
+            }
+        )
+        if next_hash:
+            self.successors[(state_hash_value, action)][next_hash] += 1
+
+    def _label(self, mean: float, obj_mean: float, hist: Dict[str, int]) -> str:
+        if mean == 0 and obj_mean == 0:
+            return "no_op"
+        top = max(hist, key=hist.get) if hist else None
+        if top == "translate":
+            return "translate"
+        if top == "recolor":
+            return "recolor"
+        if top == "create":
+            return "create_object"
+        if top == "delete":
+            return "delete_object"
+        if mean <= 1.5:
+            return "localized_transform"
+        if obj_mean != 0:
+            return "object_count_change"
+        return "multi_cell_transform"
+
+    def infer(self, state_hash_value: str, action: str) -> Dict[str, Any]:
+        effects = self.effects.get((state_hash_value, action), [])
+        if not effects:
+            return {
+                "observations": 0,
+                "semantic_label": "unknown",
+                "hypothesis": "unknown",
+                "consistency_score": None,
+                "confidence": 0.0,
+                "uncertainty": 1.0,
+                "predicted_changed_cells": 0.0,
+            }
+        counts = [float(e["num_changed_cells"]) for e in effects if e["num_changed_cells"] is not None]
+        obj_deltas = [float(e.get("delta_num_objects") or 0) for e in effects]
+        std = float(np.std(counts)) if counts else 0.0
+        mean = float(np.mean(counts)) if counts else 0.0
+        obj_mean = float(np.mean(obj_deltas)) if obj_deltas else 0.0
+        hist: Counter = Counter()
+        for e in effects:
+            hist.update(e.get("transform_histogram") or {})
+        label = self._label(mean, obj_mean, dict(hist))
+        consistency = float(1.0 / (1.0 + std)) if counts else 0.0
+        n = len(effects)
+        confidence = min(1.0, (n / 5.0) * 0.6 + consistency * 0.4)
+        uncertainty = min(1.0, (1.0 / (1.0 + n) ** 0.5) + 0.15 * min(1.0, std / max(1.0, mean + 1.0)))
+        return {
+            "observations": n,
+            "semantic_label": label,
+            "hypothesis": label,
+            "consistency_score": consistency,
+            "confidence": confidence,
+            "uncertainty": uncertainty,
+            "mean_delta_objects": obj_mean,
+            "transform_histogram": dict(hist),
+            "predicted_changed_cells": mean,
+        }
+
+    def predict_next(self, state_hash_value: str, action: str) -> Dict[str, Any]:
+        counts = self.successors.get((state_hash_value, action))
+        if not counts:
+            return {"next_hash": None, "probability": 0.0}
+        total = sum(counts.values())
+        next_hash, top = counts.most_common(1)[0]
+        return {"next_hash": next_hash, "probability": top / total}
+
+    def counterfactual(self, state_hash_value: str, actual_action: str, alt_action: str) -> Dict[str, Any]:
+        sem = self.infer(state_hash_value, alt_action)
+        pred = self.predict_next(state_hash_value, alt_action)
+        return {
+            "actual_action": actual_action,
+            "alt_action": alt_action,
+            "predicted_changed_cells": sem.get("predicted_changed_cells", 0.0),
+            "semantic_label": sem.get("semantic_label", "unknown"),
+            "confidence": sem.get("confidence", 0.0),
+            "next_hash": pred.get("next_hash"),
+            "probability": pred.get("probability", 0.0),
+        }
+
+
+
+class GoalHypothesisEngine:
+    """Phase 5 embedded: goal templates, progress signals, hypothesis ranking, experiment hints."""
+
+    def __init__(self) -> None:
+        self.hypotheses: Dict[str, Dict[str, Any]] = {}
+        self.progress_events: List[Dict[str, Any]] = []
+        self._hypothesis_counter = 0
+
+    def _spawn_hypothesis(self, template: Dict[str, Any]) -> str:
+        self._hypothesis_counter += 1
+        hid = f"gh_{self._hypothesis_counter}_{template['template_id']}"
+        self.hypotheses[hid] = {
+            "hypothesis_id": hid,
+            "template_id": template["template_id"],
+            "description": template["description"],
+            "preferred_semantics": list(template["preferred_semantics"]),
+            "progress_weights": dict(template["progress_weights"]),
+            "support": 0,
+            "refute": 0,
+            "progress_score": 0.0,
+            "status": "active",
+        }
+        return hid
+
+    def ensure_hypotheses(self, scene: Dict[str, Any]) -> None:
+        if self.hypotheses:
+            return
+        n_obj = int(scene.get("num_objects", 0))
+        for template in GOAL_TEMPLATES:
+            if template["template_id"] == "collect_tokens" and n_obj < 2:
+                continue
+            self._spawn_hypothesis(template)
+
+    def observe_progress(
+        self,
+        *,
+        reward: float,
+        level_delta: int,
+        semantics: Dict[str, Any],
+        diff: Dict[str, Any],
+    ) -> None:
+        event = {
+            "reward": reward,
+            "level_delta": level_delta,
+            "semantic_label": semantics.get("semantic_label", "unknown"),
+            "delta_num_objects": diff.get("delta_num_objects", 0),
+        }
+        self.progress_events.append(event)
+        label = event["semantic_label"]
+        for hyp in self.hypotheses.values():
+            if hyp["status"] != "active":
+                continue
+            w = hyp["progress_weights"]
+            delta = 0.0
+            if label in hyp["preferred_semantics"]:
+                delta += w.get(label, 0.5)
+            if reward > 0:
+                delta += w.get("reward", 0.0)
+            if level_delta > 0:
+                delta += w.get("level_up", 0.0)
+                hyp["support"] += 1
+            elif reward <= 0 and label not in hyp["preferred_semantics"] and label != "unknown":
+                hyp["refute"] += 1
+            hyp["progress_score"] += delta
+
+    def rank_hypotheses(self) -> List[Dict[str, Any]]:
+        ranked = sorted(
+            self.hypotheses.values(),
+            key=lambda h: (h["progress_score"] + 2.0 * h["support"] - 1.5 * h["refute"]),
+            reverse=True,
+        )
+        return ranked
+
+    def leading_hypothesis(self) -> Optional[Dict[str, Any]]:
+        ranked = self.rank_hypotheses()
+        return ranked[0] if ranked else None
+
+    def action_goal_score(self, semantics: Dict[str, Any]) -> float:
+        lead = self.leading_hypothesis()
+        if not lead:
+            return 0.0
+        label = semantics.get("semantic_label", "unknown")
+        if label in lead["preferred_semantics"]:
+            return lead["progress_weights"].get(label, 0.5)
+        return 0.0
+
+    def experiment_discrimination_bonus(
+        self, state_hash_value: str, action: str, semantics_engine: CausalSemanticsEngine
+    ) -> float:
+        ranked = self.rank_hypotheses()
+        if len(ranked) < 2:
+            return 0.0
+        top, second = ranked[0], ranked[1]
+        sem = semantics_engine.infer(state_hash_value, action)
+        label = sem.get("semantic_label", "unknown")
+        top_match = 1.0 if label in top["preferred_semantics"] else 0.0
+        second_match = 1.0 if label in second["preferred_semantics"] else 0.0
+        unc = float(sem.get("uncertainty") or 0.0)
+        return unc * abs(top_match - second_match)
 
 
 SEED = int(os.environ.get("ASRA_SEED", "42"))
